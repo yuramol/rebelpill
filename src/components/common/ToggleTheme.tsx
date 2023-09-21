@@ -1,24 +1,16 @@
-import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
-import IconSun from "~/components/icons/IconSun"
-import IconMoon from "~/components/icons/IconMoon"
+import { component$, useStore, useVisibleTask$ } from '@builder.io/qwik';
 
-interface ItemProps {
-  iconClass?: string;
-}
-
-export default component$((props: ItemProps) => {
-  const { iconClass } = props;
+export default component$(() => {
   const store = useStore({
     theme:
-      (typeof window !== "undefined" && window?.localStorage?.theme) ||
+      (typeof window !== 'undefined' && window?.localStorage?.theme) ||
       undefined,
   });
 
   useVisibleTask$(() => {
-    store.theme =
-      document.documentElement.classList.contains("dark")
-      ? "dark"
-      : "light";
+    store.theme = document.documentElement.classList.contains('dark')
+      ? 'dark'
+      : 'light';
   });
 
   return (
@@ -28,22 +20,16 @@ export default component$((props: ItemProps) => {
       aria-label="Toggle between Dark and Light mode"
       onClick$={() => {
         switch (store.theme) {
-          case "dark":
-            document.documentElement.classList.remove("dark");
-            store.theme = window.localStorage.theme = "light";
+          case 'dark':
+            document.documentElement.classList.remove('dark');
+            store.theme = window.localStorage.theme = 'light';
             break;
           default:
-            document.documentElement.classList.add("dark");
-            store.theme = window.localStorage.theme = "dark";
+            document.documentElement.classList.add('dark');
+            store.theme = window.localStorage.theme = 'dark';
             break;
         }
       }}
-    >
-      {store.theme == "dark" ? (
-        <IconMoon class={iconClass} />
-      ) : (
-        <IconSun class={iconClass} />
-      )}
-    </button>
+    ></button>
   );
 });
