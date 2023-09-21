@@ -29,8 +29,14 @@ export default component$(() => {
   return (
     <>
       <div class="flex gap-4 bg-slate-500 p-10 ">
-        <Input label="Input" type="outlined" error={'s'} />
-        <Input label="Input" />
+        <Input label="Input" variant="outlined" icon={true} />
+        <Input
+          label="Input"
+          // error="1"
+          // icon={true}
+          // helperText="This new error test 23.40d.303;f033;"
+          // className
+        />
       </div>
 
       <Hero />
