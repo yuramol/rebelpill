@@ -1,5 +1,6 @@
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { component$ } from '@builder.io/qwik';
+import { Input } from '~/components/ui';
 
 import { SITE } from '~/config.mjs';
 
@@ -31,6 +32,21 @@ export default component$(() => {
         </div>
         <div class="w-[400px] h-[400px] bg-stroke-gradient">
           <h1 class="text-dark text-h3">Text</h1>
+        </div>
+        <div class="flex flex-row">
+          <div class="w-[400px] h-[400px] bg-primary-gradient">
+            <h1 class="text-dark text-h2 font-bold">Text</h1>
+          </div>
+          <div class="w-[400px] h-[400px] bg-secondary-gradient">
+            <h1 class="text-dark text-h1">Text</h1>
+          </div>
+          <div class="w-[400px] h-[400px] bg-stroke-gradient">
+            <h1 class="text-dark text-h3">Text</h1>
+          </div>
+        </div>
+        <div class="flex gap-4 bg-slate-500 p-10 ">
+          <Input label="Input" variant="outlined" />
+          <Input label="Input" />
         </div>
       </div>
     </div>
