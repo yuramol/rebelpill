@@ -7,13 +7,13 @@ export default component$(() => {
   return (
     <div class="flex flex-row">
       <div class="w-[400px] h-[400px] bg-primary-gradient">
-        <h1 class="text-dark">Text</h1>
+        <h1 class="text-dark text-h2 font-bold">Text</h1>
       </div>
       <div class="w-[400px] h-[400px] bg-secondary-gradient">
-        <h1 class="text-dark">Text</h1>
+        <h1 class="text-dark text-h1">Text</h1>
       </div>
       <div class="w-[400px] h-[400px] bg-stroke-gradient">
-        <h1 class="text-dark">Text</h1>
+        <h1 class="text-dark text-h3">Text</h1>
       </div>
     </div>
   );

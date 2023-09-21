@@ -34,17 +34,7 @@ export default component$(() => {
           crossOrigin={true as any}
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin={true as any}
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Quantico:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
         <RouterHead />
