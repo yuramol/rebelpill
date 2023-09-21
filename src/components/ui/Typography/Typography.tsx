@@ -2,7 +2,16 @@ import { component$ } from '@builder.io/qwik';
 
 interface TypographyProps {
   text: string;
-  variant: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'body1' | 'body2' | 'caption';
+  variant:
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'button'
+    | 'body1'
+    | 'description';
   class?: string;
 }
 
@@ -40,19 +49,25 @@ export const Typography = component$<TypographyProps>(
               {text}
             </h5>
           );
-        case 'body1':
+        case 'h6':
           return (
             <p class={`text-base leading-3 font-medium ${restProps.class}`}>
               {text}
             </p>
           );
-        case 'body2':
+        case 'button':
+          return (
+            <p class={`text-base leading-3 font-semibold ${restProps.class}`}>
+              {text}
+            </p>
+          );
+        case 'body1':
           return (
             <p class={`text-sm leading-2 font-normal ${restProps.class}`}>
               {text}
             </p>
           );
-        case 'caption':
+        case 'description':
           return (
             <p
               class={`text-caption leading-1 font-semibold ${restProps.class}`}

@@ -16,9 +16,14 @@ export default component$(() => {
         <Typography text="H3" variant="h3" class="text-pink-300" />
         <Typography text="H4" variant="h4" class="text-green-300" />
         <Typography text="H5" variant="h5" class="text-green-300" />
+        <Typography text="H6" variant="h6" class="text-green-300" />
+        <Typography text="BUTTON" variant="button" class="text-green-300" />
         <Typography text="BODY1" variant="body1" class="text-green-300" />
-        <Typography text="BODY2" variant="body2" class="text-green-300" />
-        <Typography text="CAPTION" variant="caption" class="text-green-300" />
+        <Typography
+          text="DESCRIPTION"
+          variant="description"
+          class="text-green-300"
+        />
       </div>
 
       <hr />
