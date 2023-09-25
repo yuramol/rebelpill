@@ -75,9 +75,8 @@ export const Typography = component$<TypographyProps>(
               {text}
             </p>
           );
-
         default:
-          return null;
+          return <div {...restProps}>{text}</div>;
       }
     };
 
