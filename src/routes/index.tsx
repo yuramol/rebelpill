@@ -2,12 +2,15 @@ import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { Icon } from '~/components/icons/Icon';
 import { Input } from '~/components/ui';
+import { HeroSection } from '~/components/widgets';
 
 import { SITE } from '~/config.mjs';
 
 export default component$(() => {
   return (
     <div class="bg-green-500">
+      <HeroSection />
+
       <Icon icon="close" width={40} />
       <Icon icon="burger" width={40} />
       <Icon icon="arrow" />
