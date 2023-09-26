@@ -1,8 +1,8 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { Input } from '~/components/ui';
-
 import { SITE } from '~/config.mjs';
+
+import { Input } from '~/components/ui';
 
 export default component$(() => {
   return (
@@ -22,6 +22,9 @@ export default component$(() => {
         <Input label="Input" variant="outlined" />
         <Input label="Input" />
       </div>
+      <div class="h-[1000px] bg-slate-400"></div>
+      <div class="h-[800px] bg-slate-600"></div>
+      <div class="h-[600px] bg-slate-800"></div>
     </div>
   );
 });
