@@ -1,7 +1,7 @@
 import { component$, useSignal, $ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 
-import { headerMobileNav, useScrollPosition } from './helpers';
+import { headerNav, useScrollPosition } from './helpers';
 
 const spanStyle =
   'block absolute h-1 w-full m-auto bg-dark opacity-100 left-0 rotate-0 transition-all duration-[250ms] ease-in-out ';
@@ -26,7 +26,7 @@ export default component$(() => {
               <span class="block m-auto w-[35px] h-[20px] relative  rotate-0 transition duration-500 ease-in-out">
                 <span
                   class={`${spanStyle} ${
-                    isMenuOpen.value ? 'top-[10px] w-0 left-[50%] ' : 'top-0 '
+                    isMenuOpen.value ? 'top-[10px] !w-0 left-[50%] ' : 'top-0 '
                   }`}
                 ></span>
                 <span
@@ -44,7 +44,7 @@ export default component$(() => {
                 <span
                   class={`${spanStyle} ${
                     isMenuOpen.value
-                      ? 'top-[10px] w-0 left-[50%]'
+                      ? 'top-[10px] !w-0 left-[50%]'
                       : 'top-[20px] '
                   }`}
                 ></span>
@@ -58,7 +58,7 @@ export default component$(() => {
               }`}
             >
               <ul class="flex flex-col gap-[6px] text-center text-white text-base">
-                {headerMobileNav.map(({ id, title, href }) => (
+                {headerNav.map(({ id, title, href }) => (
                   <li
                     key={id}
                     class={[
@@ -70,8 +70,6 @@ export default component$(() => {
                   </li>
                 ))}
               </ul>
-
-              <span></span>
             </nav>
           </div>
         ) : null}
