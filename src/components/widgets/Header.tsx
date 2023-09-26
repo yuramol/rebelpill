@@ -1,6 +1,5 @@
 import { $, component$ } from '@builder.io/qwik';
 
-import './style.css';
 import { useScrollPosition } from './helpers';
 
 export default component$(() => {
