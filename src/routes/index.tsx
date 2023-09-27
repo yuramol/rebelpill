@@ -6,15 +6,14 @@ import { Icon } from '~/components/icons/Icon';
 
 import { SITE } from '~/config.mjs';
 
+// Components
+import { Typography } from '~/components/ui';
+
 export default component$(() => {
   // ! testing tabs
   const tabs = useSignal<1 | 2>(1);
 
-  const onClick = $((e: any) => {
-    tabs.value === 1
-      ? (tabs.value = e.target.tabIndex)
-      : (tabs.value = e.target.tabIndex);
-  });
+  const onClick = $((e: any) => (tabs.value = e.target.tabIndex));
 
   return (
     <div class="flex flex-col">
@@ -24,7 +23,7 @@ export default component$(() => {
             tabIndex={1}
             text="START COOPERATING"
             variant={
-              tabs.value === 1 ? 'squareSmallContained' : 'squareSmallOutlined'
+              tabs.value === 1 ? 'contained-secondary' : 'outlined-secondary'
             }
             onClick={onClick}
           />
@@ -32,15 +31,37 @@ export default component$(() => {
             tabIndex={2}
             text="learn more"
             variant={
-              tabs.value === 2 ? 'squareSmallContained' : 'squareSmallOutlined'
+              tabs.value === 2 ? 'contained-secondary' : 'outlined-secondary'
             }
             onClick={onClick}
           />
         </div>
 
-        <Button text="Send" variant="squareOutlined" />
-        <Button text="LET'S work" variant="circular" />
+        <Button text="Send" variant="outlined-primary" />
+        <Button text="LET'S work" variant="contained-primary" />
       </Wrapper>
+      <div class="flex flex-row m-5 gap-4">
+        <Typography text="H1" variant="h1" class="text-red-300" />
+        <Typography text="H2" variant="h2" class="text-violet-300" />
+        <Typography text="H3" variant="h3" class="text-pink-300" />
+        <Typography text="H4" variant="h4" class="text-green-300" />
+        <Typography text="H5" variant="h5" class="text-green-300" />
+        <Typography text="H6" variant="h6" class="text-green-300" />
+        <Typography text="BUTTON" variant="button" class="text-green-300" />
+        <Typography text="BODY1" variant="body1" class="text-green-300" />
+        <Typography
+          text="DESCRIPTION"
+          variant="description"
+          class="text-green-300"
+        />
+        <Typography
+          text="DEFAULT"
+          variant={undefined}
+          class="text-yellow-300"
+        />
+      </div>
+
+      <hr />
 
       <div class="bg-green-500">
         <Icon icon="close" width={40} />
