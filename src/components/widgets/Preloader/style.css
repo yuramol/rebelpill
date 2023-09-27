@@ -1,0 +1,12 @@
+.super {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) -13.74%,
+    rgba(0, 0, 0, 0.03) 110.26%
+  );
+  border-width: 2.575px;
+  border-color: #000 #ff5c00;
+  border-style: solid;
+  mix-blend-mode: overlay;
+  backdrop-filter: blur(27.037500381469727px);
+}
