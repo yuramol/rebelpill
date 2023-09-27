@@ -12,7 +12,7 @@ import {
   PlusGradient,
   Play,
   Heart,
-} from './Icons';
+} from './icons';
 import type { IconsNamesMapType } from './types';
 
 export const IconsMap: IconsNamesMapType = {
