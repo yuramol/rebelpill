@@ -8,12 +8,11 @@ import IconArrowRight from '~/components/icons/IconArrowRight';
 
 interface ButtonProps {
   text: string;
-  variant:
+  variant?:
     | 'contained-primary'
     | 'outlined-primary'
     | 'contained-secondary'
-    | 'outlined-secondary'
-    | undefined;
+    | 'outlined-secondary';
   isLoading?: boolean;
   disabled?: boolean;
   class?: string;
