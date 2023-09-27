@@ -2,11 +2,10 @@ import { component$ } from '@builder.io/qwik';
 
 // Components
 import { Wrapper } from '~/components/common';
-import { Chip } from '~/components/ui';
+import { Chip, Typography } from '~/components/ui';
 
 export const HeroSection = component$(() => {
-  // ! TODO mock data
-  const mockChipsData = [
+  const chips = [
     {
       text: 'your salary hits the ceiling',
       class: 'absolute left-11 bottom-60 -rotate-6',
@@ -30,23 +29,36 @@ export const HeroSection = component$(() => {
   ];
 
   return (
-    <div class="h-screen w-full bg-primary-gradient bg-top flex overflow-hidden">
-      <Wrapper class="flex flex-col items-center pt-[100px] gap-12 relative">
+    <section class="h-screen w-full bg-primary-gradient bg-top flex overflow-hidden">
+      <Wrapper class="flex flex-col items-center pt-24 gap-12 relative">
         {/* logo */}
-        <div class="text-black text-base font-bold">REBELPILL</div>
+        <Typography
+          text="REBELPILL"
+          variant="h5"
+          class="text-black !font-semibold uppercase"
+        />
 
         {/* title */}
-        <div class="text-black text-h1 text-center font-extrabold">
-          You're not a real coder <br class="hidden md:block" /> if it doesn't
-          piss you off
+        <div>
+          <Typography
+            text="You're not a real coder"
+            variant="h1"
+            class="text-black text-center uppercase"
+          />
+          <Typography
+            text="If it doesn't
+          piss you off"
+            variant="h1"
+            class="text-black text-center uppercase"
+          />
         </div>
 
         {/* chips */}
-        {mockChipsData.length &&
-          mockChipsData.map((chip, index) => (
+        {chips.length &&
+          chips.map((chip, index) => (
             <Chip key={index} text={chip.text} class={chip.class} />
           ))}
       </Wrapper>
-    </div>
+    </section>
   );
 });
