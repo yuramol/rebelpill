@@ -2,6 +2,7 @@
 
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const { mauve, violet } = require('@radix-ui/colors');
 
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -54,6 +55,8 @@ module.exports = {
         white: {
           DEFAULT: 'var(--white)',
         },
+        ...mauve,
+        ...violet,
       },
       backgroundImage: {
         'primary-gradient':
@@ -64,6 +67,20 @@ module.exports = {
           'linear-gradient(0deg, #FF5C00 -9.68%, rgba(255, 92, 0, 0.00) 97.57%)',
         'hover-gradient':
           'linear-gradient(261deg, #FC5B00 31.68%, #FF010E 89.55%)',
+      },
+      keyframes: {
+        slideDown: {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        slideUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
       },
     },
   },
