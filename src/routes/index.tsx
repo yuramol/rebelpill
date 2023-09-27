@@ -1,8 +1,11 @@
-import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { SITE } from '~/config.mjs';
 
 import { Input } from '~/components/ui';
+import { component$ } from '@builder.io/qwik';
+
+import { SITE } from '~/config.mjs';
+
+// Components
 
 export default component$(() => {
   return (
