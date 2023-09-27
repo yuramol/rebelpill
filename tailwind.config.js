@@ -57,6 +57,9 @@ module.exports = {
         grey: {
           DEFAULT: 'var(--grey)',
         },
+        lightGrey: {
+          DEFAULT: 'var(--light-grey)',
+        },
       },
       backgroundImage: {
         'primary-gradient':
