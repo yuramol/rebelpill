@@ -11,7 +11,8 @@ interface TypographyProps {
     | 'h6'
     | 'button'
     | 'body1'
-    | 'description';
+    | 'description'
+    | undefined;
   class?: string;
 }
 
@@ -76,7 +77,7 @@ export const Typography = component$<TypographyProps>(
             </p>
           );
         default:
-          return <div {...restProps}>{text}</div>;
+          return <p {...restProps}>{text}</p>;
       }
     };
 

@@ -25,6 +25,11 @@ export default component$(() => {
           variant="description"
           class="text-green-300"
         />
+        <Typography
+          text="DEFAULT"
+          variant={undefined}
+          class="text-yellow-300"
+        />
       </div>
 
       <hr />
