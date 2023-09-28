@@ -23,6 +23,7 @@ module.exports = {
       8: '76px',
     },
     fontSize: {
+      tiny: '12px',
       caption: '14px',
       sm: '16px',
       base: '20px',

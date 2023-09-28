@@ -7,6 +7,7 @@ export interface InputProps {
   handleIcon?: () => void;
   onChange?: (value: string) => void;
   extraClass?: string;
+  wrapperClass?: string;
   type?: string;
   autoComplete?: string;
   autoFocus?: boolean;
