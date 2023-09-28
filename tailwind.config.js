@@ -64,6 +64,8 @@ module.exports = {
           'linear-gradient(0deg, #FF5C00 -9.68%, rgba(255, 92, 0, 0.00) 97.57%)',
         'hover-gradient':
           'linear-gradient(261deg, #FC5B00 31.68%, #FF010E 89.55%)',
+        'step-gradient':
+          'linear-gradient(180deg, #0C0C0C 0%, rgba(12, 12, 12, 0.00) 100%)',
       },
     },
   },
