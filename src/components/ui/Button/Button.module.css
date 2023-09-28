@@ -1,0 +1,22 @@
+.btn_square::before,
+.btn_square::after {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    170deg,
+    #ff5c00 0%,
+    #ff010e 20.16%,
+    #fc5b00 28.58%,
+    #ff5c00 68.47%,
+    #ff000d 100%
+  );
+}
+
+/* icon */
+.icon_arraow_right path {
+  fill: #ff5c00;
+  transition: fill 0.4s;
+}
+
+.btn_circular:hover .icon_arraow_right path {
+  fill: #fff;
+}
