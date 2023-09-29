@@ -1,13 +1,15 @@
 import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
-import { SITE } from '~/config.mjs';
-
 // Components
-import { StepsToSuccessSection } from '~/components/widgets';
+import {
+  HeroSection,
+  StepsToSuccessSection,
+  CleanSchemeSection,
+} from '~/components/widgets';
 import { Button, Input, Typography } from '~/components/ui';
 import { Wrapper } from '~/components/common';
-import { Icon } from '~/components/icons';
+import { SITE } from '~/config.mjs';
 
 export default component$(() => {
   // ! testing tabs
@@ -18,6 +20,8 @@ export default component$(() => {
   return (
     <div class="flex flex-col">
       <StepsToSuccessSection />
+      <CleanSchemeSection />
+      <HeroSection />
 
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">
@@ -66,19 +70,6 @@ export default component$(() => {
       <hr />
 
       <div class="bg-green-500">
-        <Icon icon="close" width={40} />
-        <Icon icon="burger" width={40} />
-        <Icon icon="arrow" />
-        <Icon icon="arrowUp" />
-        <Icon icon="arrowShort" />
-        <Icon icon="arrowDown" />
-        <Icon icon="arrowNorthEast" />
-        <Icon icon="arrowGradient" />
-        <Icon icon="check" />
-        <Icon icon="plus" />
-        <Icon icon="plusGradient" />
-        <Icon icon="play" />
-        <Icon icon="heart" />
         <div class="flex flex-col">
           <div class="flex flex-row">
             <div class="w-[400px] h-[400px] bg-primary-gradient">
@@ -97,6 +88,13 @@ export default component$(() => {
           </div>
         </div>
       </div>
+      <div class="flex gap-4 bg-slate-500 p-10 ">
+        <Input label="Input" variant="outlined" />
+        <Input label="Input" />
+      </div>
+      <div class="h-[1000px] bg-slate-400"></div>
+      <div class="h-[800px] bg-slate-600"></div>
+      <div class="h-[600px] bg-slate-800"></div>
     </div>
   );
 });
