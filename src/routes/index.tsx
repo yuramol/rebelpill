@@ -2,14 +2,14 @@ import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 // Components
-import { CleanSchemeSection } from '~/components/widgets';
-import { HeroSection } from '~/components/widgets';
-import { Wrapper } from '~/components/common';
+import {
+  HeroSection,
+  StepsToSuccessSection,
+  CleanSchemeSection,
+} from '~/components/widgets';
 import { Button, Input, Typography } from '~/components/ui';
-
+import { Wrapper } from '~/components/common';
 import { SITE } from '~/config.mjs';
-
-// Components
 
 export default component$(() => {
   // ! testing tabs
@@ -19,6 +19,7 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col">
+      <StepsToSuccessSection />
       <CleanSchemeSection />
       <HeroSection />
 
