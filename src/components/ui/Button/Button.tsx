@@ -2,9 +2,9 @@ import { component$ } from '@builder.io/qwik';
 
 // Styles
 import styles from './Button.module.css';
+import IconArrowRight from '../Icon/icons/IconArrowRight';
 
 // Components
-import IconArrowRight from '~/components/icons/IconArrowRight';
 
 interface ButtonProps {
   text: string;

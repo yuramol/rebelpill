@@ -14,7 +14,8 @@ export type IconsNames =
   | 'plus'
   | 'plusGradient'
   | 'play'
-  | 'heart';
+  | 'heart'
+  | 'home';
 
 export type IconsNamesMapType = {
   [key in IconsNames]: (style: IconCommonProps) => JSX.Element;
