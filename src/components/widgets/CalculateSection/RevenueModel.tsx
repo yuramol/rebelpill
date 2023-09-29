@@ -18,7 +18,7 @@ export const RevenueModel = component$(() => {
   });
 
   return (
-    <div class="flex flex-col w-full max-w-[743px] max-h-full xl:max-h-[468px] py-[30px] px-5 md:px-8 md:py-11 lg:p-[60px] lg:pr-[96px] border border-[rgba(255, 255, 255, 0.50)] rounded-es-[5px] rounded-tl-[5px]">
+    <div class="flex flex-col w-full max-w-[743px] max-h-full xl:max-h-[468px] py-[30px] px-5 md:px-8 md:py-11 lg:p-[60px] lg:pr-[96px] border border-[rgba(255, 255, 255, 0.50)] rounded-es-none md:rounded-es-[5px] rounded-se-[5px] md:rounded-se-none rounded-tl-[5px]">
       <Typography
         variant="h2"
         text="Revenue Model"
@@ -100,7 +100,7 @@ export const RevenueModel = component$(() => {
               key={room.id}
               class={`inline-flex rounded-[3px] border ${
                 selectedProjectDurationTime.value === room.id
-                  ? 'border-secondary'
+                  ? 'border-primary'
                   : 'border-[rgba(255, 255, 255, 0.50)]'
               } `}
             >
