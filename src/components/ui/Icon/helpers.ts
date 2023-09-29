@@ -12,7 +12,8 @@ import {
   PlusGradient,
   Play,
   Heart,
-} from './Icons';
+  Home,
+} from './icons';
 import type { IconsNamesMapType } from './types';
 
 export const IconsMap: IconsNamesMapType = {
@@ -29,4 +30,5 @@ export const IconsMap: IconsNamesMapType = {
   play: Play,
   arrowUp: ArrowUp,
   heart: Heart,
+  home: Home,
 };

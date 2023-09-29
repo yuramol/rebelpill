@@ -1,13 +1,11 @@
 import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { Wrapper } from '~/components/common';
-import { Button, Input } from '~/components/ui';
-import { Icon } from '~/components/icons/Icon';
+import { Button, Input, Typography } from '~/components/ui';
 
 import { SITE } from '~/config.mjs';
 
 // Components
-import { Typography } from '~/components/ui';
 
 export default component$(() => {
   // ! testing tabs
@@ -64,7 +62,7 @@ export default component$(() => {
       <hr />
 
       <div class="bg-green-500">
-        <Icon icon="close" width={40} />
+        {/* <Icon icon="close" width={40} />
         <Icon icon="burger" width={40} />
         <Icon icon="arrow" />
         <Icon icon="arrowUp" />
@@ -76,7 +74,7 @@ export default component$(() => {
         <Icon icon="plus" />
         <Icon icon="plusGradient" />
         <Icon icon="play" />
-        <Icon icon="heart" />
+        <Icon icon="heart" /> */}
         <div class="flex flex-col">
           <div class="flex flex-row">
             <div class="w-[400px] h-[400px] bg-primary-gradient">
@@ -95,6 +93,13 @@ export default component$(() => {
           </div>
         </div>
       </div>
+      <div class="flex gap-4 bg-slate-500 p-10 ">
+        <Input label="Input" variant="outlined" />
+        <Input label="Input" />
+      </div>
+      <div class="h-[1000px] bg-slate-400"></div>
+      <div class="h-[800px] bg-slate-600"></div>
+      <div class="h-[600px] bg-slate-800"></div>
     </div>
   );
 });

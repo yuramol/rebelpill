@@ -11,3 +11,4 @@ export { PlusGradient } from './PlusGradient';
 export { Play } from './Play';
 export { ArrowShort } from './ArrowShort';
 export { Heart } from './Heart';
+export { Home } from './Home';
