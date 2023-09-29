@@ -1,5 +1,8 @@
 import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+
+// Components
+import { CleanSchemeSection } from '~/components/widgets';
 import { HeroSection } from '~/components/widgets';
 import { Wrapper } from '~/components/common';
 import { Button, Input, Typography } from '~/components/ui';
@@ -16,6 +19,7 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col">
+      <CleanSchemeSection />
       <HeroSection />
 
       <Wrapper class="flex flex-col gap-10 my-10">
