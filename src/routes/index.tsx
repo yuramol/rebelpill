@@ -8,6 +8,7 @@ import { SITE } from '~/config.mjs';
 
 // Components
 import { Typography } from '~/components/ui';
+import { CalculateSection } from '~/components/widgets/CalculateSection';
 
 export default component$(() => {
   // ! testing tabs
@@ -18,6 +19,7 @@ export default component$(() => {
   return (
     <div class="flex flex-col">
       <Wrapper class="flex flex-col gap-10 my-10">
+        <CalculateSection />
         <div class="flex flex-row gap-10 my-4">
           <Button
             tabIndex={1}
