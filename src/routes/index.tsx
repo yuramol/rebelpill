@@ -2,13 +2,16 @@ import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 // Components
+import { Wrapper } from '~/components/common';
+
 import {
   HeroSection,
   StepsToSuccessSection,
   CleanSchemeSection,
 } from '~/components/widgets';
-import { Button, Input, Typography } from '~/components/ui';
-import { Wrapper } from '~/components/common';
+
+import { Button, Input, Typography, Carousel } from '~/components/ui';
+
 import { SITE } from '~/config.mjs';
 
 export default component$(() => {
@@ -22,7 +25,7 @@ export default component$(() => {
       <StepsToSuccessSection />
       <CleanSchemeSection />
       <HeroSection />
-
+      <Carousel />
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">
           <Button
