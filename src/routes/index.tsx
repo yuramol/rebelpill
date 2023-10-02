@@ -5,6 +5,7 @@ import { Wrapper } from '~/components/common';
 import { Button, Input, Typography } from '~/components/ui';
 
 import { SITE } from '~/config.mjs';
+import { Carousel } from '~/components/ui/Carousel';
 
 // Components
 
@@ -17,7 +18,7 @@ export default component$(() => {
   return (
     <div class="flex flex-col">
       <HeroSection />
-
+      <Carousel />
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">
           <Button
