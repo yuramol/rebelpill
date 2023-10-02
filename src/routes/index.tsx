@@ -1,13 +1,12 @@
 import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { Wrapper } from '~/components/common';
-import { Button, Input } from '~/components/ui';
-import { Icon } from '~/components/icons/Icon';
-
 import { SITE } from '~/config.mjs';
 
 // Components
-import { Typography } from '~/components/ui';
+import { Button, Input, Typography } from '~/components/ui';
+import { FollowUsSection } from '~/components/widgets';
+import { Wrapper } from '~/components/common';
+import { Icon } from '~/components/icons';
 
 export default component$(() => {
   // ! testing tabs
@@ -17,6 +16,8 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col">
+      <FollowUsSection />
+
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">
           <Button
