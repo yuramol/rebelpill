@@ -1,13 +1,18 @@
 import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { HeroSection } from '~/components/widgets';
-import { Wrapper } from '~/components/common';
-import { Button, Input, Typography } from '~/components/ui';
-
-import { SITE } from '~/config.mjs';
-import { Carousel } from '~/components/ui/Carousel';
 
 // Components
+import { Wrapper } from '~/components/common';
+
+import {
+  HeroSection,
+  StepsToSuccessSection,
+  CleanSchemeSection,
+} from '~/components/widgets';
+
+import { Button, Input, Typography, Carousel } from '~/components/ui';
+
+import { SITE } from '~/config.mjs';
 
 export default component$(() => {
   // ! testing tabs
@@ -17,6 +22,8 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col">
+      <StepsToSuccessSection />
+      <CleanSchemeSection />
       <HeroSection />
       <Carousel />
       <Wrapper class="flex flex-col gap-10 my-10">

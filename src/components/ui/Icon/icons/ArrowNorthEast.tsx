@@ -13,6 +13,7 @@ export const ArrowNorthEast = (style: IconCommonProps) => (
       <path
         d="M5.07086 44.0953L-0.107449 38.9169L30.9624 7.8471L2.48171 7.8471L2.48171 0.493902H43.4939V41.5061L36.1407 41.5061V13.0254L5.07086 44.0953Z"
         fill="#FF5C00"
+        style={style}
       />
     </g>
     <defs>
