@@ -8,6 +8,7 @@ import {
   HeroSection,
   StepsToSuccessSection,
   CleanSchemeSection,
+  BenefitsSection,
 } from '~/components/widgets';
 
 import { Button, Input, Typography, Carousel } from '~/components/ui';
@@ -22,6 +23,7 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col">
+      <BenefitsSection />
       <StepsToSuccessSection />
       <CleanSchemeSection />
       <HeroSection />
