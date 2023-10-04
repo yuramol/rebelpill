@@ -64,6 +64,7 @@ module.exports = {
           'linear-gradient(0deg, #FF5C00 -9.68%, rgba(255, 92, 0, 0.00) 97.57%)',
         'hover-gradient':
           'linear-gradient(261deg, #FC5B00 31.68%, #FF010E 89.55%)',
+        test: 'conic-gradient(from 215.39deg at 17.01% 79.56%, #171719 -94.98deg, #181818 35.76deg, #FF5C00 69.45deg, #FF010E 79.73deg, #FC5B00 102.87deg, #FF5C00 242.1deg, #FF000D 251.42deg, #171719 265.02deg, #181818 395.76deg)',
       },
     },
   },

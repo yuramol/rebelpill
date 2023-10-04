@@ -1,41 +1,36 @@
 import { component$ } from '@builder.io/qwik';
 
-import Video from '~/assets/videos/video.mp4';
+import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
 
 export const FollowUsSection = component$(() => {
-  const array = ['dj', 'djal', 'ss'];
+  const videos = [Video];
 
   return (
     <section
       class={[
-        'min-h-[100vh] w-full bg-primary-gradient flex overflow-hidden relative py-[20px]',
+        'min-h-[100vh] w-full  flex overflow-hidden relative py-[20px]',
+        "before:content-[''] before:bg-primary-gradient before:absolute before:inset-0 before:-scale-x-100",
       ]}
     >
-      <div
-        class={[
-          'w-full flex rotate-[-1.001deg] gap-8 overflow-hidden absolute left-0 top-[200px]',
-        ]}
-      >
-        {array.map((item, index) => {
-          return (
-            <div
-              key={index}
-              class={[`h-[440px] max-w-[250px] w-full bg-green-200`]}
-              style={{ marginBottom: `${index}em` }}
-            >
-              <video
-                height={440}
-                width={250}
-                muted
-                loop
-                // autoPlay
-                controls
+      <div class="w-full flex gap-8 overflow-hidden absolute left-0 top-[200px]">
+        {/* videos */}
+        {videos.length &&
+          videos.map((video, index) => {
+            return (
+              <div
+                key={index}
+                class="h-[440px] max-w-[250px] w-full overflow-hidden"
+                style={{ marginBottom: `${index}em` }}
               >
-                <source src={Video} type="video/mp4" />
-              </video>
-            </div>
-          );
-        })}
+                <video key={index} class="h-full w-full" muted loop controls>
+                  <source src={video} type="video/mp4" />
+                </video>
+              </div>
+            );
+          })}
+
+        {/* chip */}
+        <div></div>
       </div>
     </section>
   );
