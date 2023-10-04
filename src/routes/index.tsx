@@ -23,11 +23,15 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col">
+      {/* sections */}
+      <HeroSection />
+      <CleanSchemeSection />
       <BenefitsSection />
       <StepsToSuccessSection />
-      <CleanSchemeSection />
-      <HeroSection />
+
       <Carousel />
+
+      {/* legos */}
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">
           <Button
@@ -51,6 +55,7 @@ export default component$(() => {
         <Button text="Send" variant="outlined-primary" />
         <Button text="LET'S work" variant="contained-primary" />
       </Wrapper>
+
       <div class="flex flex-row m-5 gap-4">
         <Typography text="H1" variant="h1" class="text-red-300" />
         <Typography text="H2" variant="h2" class="text-violet-300" />
@@ -92,10 +97,6 @@ export default component$(() => {
             <Input label="Input" />
           </div>
         </div>
-      </div>
-      <div class="flex gap-4 bg-slate-500 p-10 ">
-        <Input label="Input" variant="outlined" />
-        <Input label="Input" />
       </div>
       <div class="h-[1000px] bg-slate-400"></div>
       <div class="h-[800px] bg-slate-600"></div>
