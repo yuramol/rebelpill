@@ -92,10 +92,6 @@ export default component$(() => {
           </div>
         </div>
       </div>
-      <div class="flex gap-4 bg-slate-500 p-10 ">
-        <Input label="Input" variant="outlined" />
-        <Input label="Input" />
-      </div>
       <div class="h-[1000px] bg-slate-400"></div>
       <div class="h-[800px] bg-slate-600"></div>
       <div class="h-[600px] bg-slate-800"></div>

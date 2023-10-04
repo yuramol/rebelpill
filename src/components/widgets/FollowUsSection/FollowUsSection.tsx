@@ -9,7 +9,7 @@ export const FollowUsSection = component$(() => {
     <section
       class={[
         'min-h-[100vh] w-full  flex overflow-hidden relative py-[20px]',
-        "before:content-[''] before:bg-primary-gradient before:absolute before:inset-0 before:-scale-x-100",
+        "before:content-[''] before:bg-primary-gradient-mirror before:absolute before:inset-0 before:-scale-x-100",
       ]}
     >
       <div class="w-full flex gap-8 overflow-hidden absolute left-0 top-[200px]">

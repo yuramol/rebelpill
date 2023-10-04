@@ -67,6 +67,8 @@ module.exports = {
       backgroundImage: {
         'primary-gradient':
           'conic-gradient(from 223.88deg at 34.51% 66.63%, #171719 -94.98deg, #181818 35.76deg, #FF5C00 69.45deg, #FF010E 79.73deg, #FC5B00 102.87deg, #FF5C00 242.1deg, #FF000D 251.42deg, #171719 265.02deg, #181818 395.76deg)',
+        'primary-gradient-mirror':
+          'conic-gradient(from 215.39deg at 17.01% 79.56%, #171719 -94.98deg, #181818 35.76deg, #FF5C00 69.45deg, #FF010E 79.73deg, #FC5B00 102.87deg, #FF5C00 242.1deg, #FF000D 251.42deg, #171719 265.02deg, #181818 395.76deg)',
         'secondary-gradient':
           'conic-gradient(from 217deg at 39.44% 50.14%, #FF5C00 69.44697797298431deg, #FF010E 79.72867369651794deg, #FC5B00 102.87469983100891deg, #FF5C00 242.10206508636475deg, #FF000D 251.4223551750183deg)',
         'stroke-gradient':
@@ -75,7 +77,6 @@ module.exports = {
           'linear-gradient(261deg, #FC5B00 31.68%, #FF010E 89.55%)',
         'step-gradient':
           'linear-gradient(180deg, #0C0C0C 0%, rgba(12, 12, 12, 0.00) 100%)',
-        test: 'conic-gradient(from 215.39deg at 17.01% 79.56%, #171719 -94.98deg, #181818 35.76deg, #FF5C00 69.45deg, #FF010E 79.73deg, #FC5B00 102.87deg, #FF5C00 242.1deg, #FF000D 251.42deg, #171719 265.02deg, #181818 395.76deg)',
       },
     },
   },
