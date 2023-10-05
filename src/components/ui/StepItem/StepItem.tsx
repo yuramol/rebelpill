@@ -2,7 +2,7 @@ import { component$ } from '@builder.io/qwik';
 
 // Components
 import { Typography } from '~/components/ui';
-import { Icon } from '~/components/icons';
+import { Icon } from '../Icon';
 
 export interface StepItemProps {
   step: number;

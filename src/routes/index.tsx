@@ -48,7 +48,9 @@ export default component$(() => {
 
         <Button text="Send" variant="outlined-primary" />
         <Button text="LET'S work" variant="contained-primary" />
+        <Carousel />
       </Wrapper>
+
       <div class="flex flex-row m-5 gap-4">
         <Typography text="H1" variant="h1" class="text-red-300" />
         <Typography text="H2" variant="h2" class="text-violet-300" />
