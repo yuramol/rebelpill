@@ -10,6 +10,8 @@ module.exports = {
       sm: '440px',
       md: '768px',
       lg: '1024px',
+      smContactForm: '625px',
+      mdContactForm: '1100px',
       xl: '1440px',
     },
     lineHeight: {
@@ -50,6 +52,9 @@ module.exports = {
         },
         dark: {
           DEFAULT: 'var(--dark)',
+        },
+        darkSecondary: {
+          DEFAULT: 'var(--dark-secondary)',
         },
         white: {
           DEFAULT: 'var(--white)',

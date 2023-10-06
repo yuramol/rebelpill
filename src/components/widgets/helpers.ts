@@ -13,7 +13,6 @@ export function useScrollPosition() {
     $(() => {
       const scrollY = document.documentElement.scrollTop;
       position.value = scrollY;
-      console.log(position.value);
     })
   );
 
