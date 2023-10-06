@@ -25,7 +25,6 @@ export default component$(() => {
       <StepsToSuccessSection />
       <CleanSchemeSection />
       <HeroSection />
-      <Carousel />
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">
           <Button

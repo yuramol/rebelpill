@@ -1,21 +1,28 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik';
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { EffectCoverflow, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
 
 export const Carousel = component$(() => {
   useVisibleTask$(() => {
     new Swiper('.swiper', {
-      slidesPerView: 4,
+      // See examples here: https://swiperjs.com/demos
+      slidesPerView: 3,
       loop: true,
-      autoplay: { delay: 500 },
-      spaceBetween: 30,
       centeredSlides: true,
-      pagination: {
-        clickable: true,
+      modules: [EffectCoverflow, Pagination],
+      effect: 'coverflow',
+      grabCursor: true,
+      coverflowEffect: {
+        rotate: 30,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
       },
-      freeMode: { momentumBounceRatio: 3 },
-      hashNavigation: true,
-      modules: [Navigation, Pagination],
+      pagination: true,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
