@@ -23,7 +23,6 @@ export const AddSocialModal = component$<ContactFormProps>(
         placeholder: ' ',
         id: socialInputs.value.length + 1,
       });
-      console.log(socialInputs);
     });
 
     return (

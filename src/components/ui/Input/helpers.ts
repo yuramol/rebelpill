@@ -1,4 +1,4 @@
-import type { IconsNames } from '~/components/icons';
+import type { IconsNames } from '../Icon';
 
 export interface InputProps {
   error?: string | false | undefined;
