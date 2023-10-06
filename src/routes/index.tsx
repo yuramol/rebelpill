@@ -2,16 +2,15 @@ import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 // Components
+import { Button, Input, Typography, Carousel } from '~/components/ui';
 import { Wrapper } from '~/components/common';
-
 import {
   HeroSection,
   StepsToSuccessSection,
   CleanSchemeSection,
-  BenefitsSection,
+  FollowUsSection,
+  BenefitsSection
 } from '~/components/widgets';
-
-import { Button, Input, Typography, Carousel } from '~/components/ui';
 
 import { SITE } from '~/config.mjs';
 
@@ -28,6 +27,7 @@ export default component$(() => {
       <CleanSchemeSection />
       <BenefitsSection />
       <StepsToSuccessSection />
+      <FollowUsSection />
 
       {/* legos */}
       <Wrapper class="flex flex-col gap-10 my-10">
