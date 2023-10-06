@@ -5,4 +5,5 @@ export { Input } from './Input';
 export { Chip } from './Chip';
 export { Button } from './Button';
 export { Carousel } from './Carousel';
+export { BenefitCard } from './BenefitCard';
 export { Icon } from './Icon';

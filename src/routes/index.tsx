@@ -7,6 +7,7 @@ import {
   HeroSection,
   StepsToSuccessSection,
   CleanSchemeSection,
+  BenefitsSection,
 } from '~/components/widgets';
 
 import { Carousel } from '~/components/ui';
@@ -21,6 +22,7 @@ export default component$(() => {
       <StepsToSuccessSection />
       <Carousel />
       <ContactSection />
+      <BenefitsSection />
     </div>
   );
 });
