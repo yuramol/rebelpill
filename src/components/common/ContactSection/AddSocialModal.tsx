@@ -1,21 +1,19 @@
 import type { QRL } from '@builder.io/qwik';
-import { $, component$, useSignal, useStore } from '@builder.io/qwik';
+import { $, component$, useStore } from '@builder.io/qwik';
 
 import { Button, Input, Typography } from '~/components/ui';
 
-interface ContactFormProps {
+interface AddSocialModalProps {
   toggleModal: QRL<() => void>;
 }
 
-export const AddSocialModal = component$<ContactFormProps>(
+export const AddSocialModal = component$<AddSocialModalProps>(
   ({ toggleModal }) => {
-    const isHovered = useSignal(false);
     const socialInputs = useStore([
       { placeholder: 'FOR EXAMPLE, INSTAGRAM', id: 1 },
     ]);
 
     const handleAddRow = $(() => {
-      isHovered.value = !isHovered.value;
       socialInputs.push({
         placeholder: ' ',
         id: socialInputs.length + 1,
@@ -25,7 +23,7 @@ export const AddSocialModal = component$<ContactFormProps>(
     return (
       <div
         class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden"
-        id="modal"
+        id="add-social-modal"
       >
         <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
           <div class="fixed inset-0 transition-opacity">

@@ -53,6 +53,9 @@ module.exports = {
         dark: {
           DEFAULT: 'var(--dark)',
         },
+        darkSecondary: {
+          DEFAULT: 'var(--dark-secondary)',
+        },
         white: {
           DEFAULT: 'var(--white)',
         },

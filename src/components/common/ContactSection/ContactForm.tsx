@@ -4,14 +4,19 @@ import { Button, Input, Typography } from '~/components/ui';
 
 import { AddSocialModal } from './AddSocialModal';
 import { itProfessions } from './helpers';
+import { ThankModal } from './ThankModal';
 
 interface ContactFormProps {
   tab: number;
 }
 
 export const ContactForm = component$<ContactFormProps>(({ tab }) => {
-  const toggleModal = $(() => {
-    document.getElementById('modal')?.classList.toggle('hidden');
+  const toggleSocialModal = $(() => {
+    document.getElementById('add-social-modal')?.classList.toggle('hidden');
+  });
+
+  const toggleThankModal = $(() => {
+    document.getElementById('thank-modal')?.classList.toggle('hidden');
   });
 
   return (
@@ -40,7 +45,7 @@ export const ContactForm = component$<ContactFormProps>(({ tab }) => {
           variant="text"
           text="Add a link to my social network"
           class="mb-10 smContactForm:mb-5"
-          onClick={toggleModal}
+          onClick={toggleSocialModal}
         />
       ) : null}
       <Button variant="outlined-primary" text="SEND" class="mb-5" />
@@ -62,7 +67,8 @@ export const ContactForm = component$<ContactFormProps>(({ tab }) => {
           />
         </div>
       </div>
-      <AddSocialModal toggleModal={toggleModal} />
+      <AddSocialModal toggleModal={toggleSocialModal} />
+      <ThankModal toggleModal={toggleThankModal} />
     </div>
   );
 });
