@@ -9,6 +9,7 @@ import {
   StepsToSuccessSection,
   CleanSchemeSection,
   FollowUsSection,
+  BenefitsSection
 } from '~/components/widgets';
 
 import { SITE } from '~/config.mjs';
@@ -21,12 +22,16 @@ export default component$(() => {
 
   return (
     <div class="flex flex-col">
+      {/* sections */}
+      <HeroSection />
+      <CleanSchemeSection />
+      <BenefitsSection />
+      <StepsToSuccessSection />
       <FollowUsSection />
 
-      <StepsToSuccessSection />
-      <CleanSchemeSection />
-      <HeroSection />
       <Carousel />
+
+      {/* legos */}
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">
           <Button
@@ -49,7 +54,9 @@ export default component$(() => {
 
         <Button text="Send" variant="outlined-primary" />
         <Button text="LET'S work" variant="contained-primary" />
+        <Carousel />
       </Wrapper>
+
       <div class="flex flex-row m-5 gap-4">
         <Typography text="H1" variant="h1" class="text-red-300" />
         <Typography text="H2" variant="h2" class="text-violet-300" />
