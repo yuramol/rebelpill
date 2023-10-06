@@ -3,14 +3,14 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 
 import { ContactSection } from '~/components/common';
 
+import { Carousel } from '~/components/ui';
 import {
   HeroSection,
   StepsToSuccessSection,
   CleanSchemeSection,
+  FollowUsSection,
   BenefitsSection,
 } from '~/components/widgets';
-
-import { Carousel } from '~/components/ui';
 
 import { SITE } from '~/config.mjs';
 
@@ -23,6 +23,7 @@ export default component$(() => {
       <StepsToSuccessSection />
       <Carousel />
       <ContactSection />
+      <FollowUsSection />
     </div>
   );
 });
