@@ -110,7 +110,7 @@ export const Input = component$(
               placeholder=" "
               {...props}
             >
-              <option disabled selected value=""></option>
+              <option disabled selected hidden value=""></option>
               {selectOptions?.map(({ value, title }) => (
                 <option key={value} value={value}>
                   {title}

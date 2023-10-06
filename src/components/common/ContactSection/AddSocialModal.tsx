@@ -1,7 +1,7 @@
 import type { QRL } from '@builder.io/qwik';
-import { $, component$, useSignal } from '@builder.io/qwik';
+import { $, component$, useSignal, useStore } from '@builder.io/qwik';
 
-import { Button, Input, Typography, Icon } from '~/components/ui';
+import { Button, Input, Typography } from '~/components/ui';
 
 interface ContactFormProps {
   toggleModal: QRL<() => void>;
@@ -10,18 +10,15 @@ interface ContactFormProps {
 export const AddSocialModal = component$<ContactFormProps>(
   ({ toggleModal }) => {
     const isHovered = useSignal(false);
-    const socialInputs = useSignal([
+    const socialInputs = useStore([
       { placeholder: 'FOR EXAMPLE, INSTAGRAM', id: 1 },
     ]);
 
-    const toggleHovered = $(() => {
-      isHovered.value = !isHovered.value;
-    });
-
     const handleAddRow = $(() => {
-      socialInputs.value.push({
+      isHovered.value = !isHovered.value;
+      socialInputs.push({
         placeholder: ' ',
-        id: socialInputs.value.length + 1,
+        id: socialInputs.length + 1,
       });
     });
 
@@ -50,7 +47,7 @@ export const AddSocialModal = component$<ContactFormProps>(
                 class="uppercase mb-10"
               />
               <div class="w-full flex flex-col mb-10">
-                {socialInputs.value.map(({ placeholder, id }, index) => (
+                {socialInputs.map(({ placeholder, id }, index) => (
                   <div key={id} class="flex flex-row items-center gap-5">
                     <Typography
                       variant="body1"
@@ -61,29 +58,13 @@ export const AddSocialModal = component$<ContactFormProps>(
                   </div>
                 ))}
               </div>
-              {socialInputs.value.length < 3 ? (
-                <div
-                  class="flex flex-row cursor-pointer gap-[6px] mb-10"
-                  onClick$={handleAddRow}
-                  onMouseEnter$={toggleHovered}
-                  onMouseLeave$={toggleHovered}
-                >
-                  <Icon
-                    icon="plus"
-                    color={isHovered.value ? '#FF010E' : undefined}
-                  />
-                  <Typography
-                    variant="body1"
-                    text="Add a row"
-                    class={`bg-white bg-clip-text text-transparent uppercase
-              ${
-                isHovered.value
-                  ? 'hover:bg-hover-gradient hover:from-primary  hover:bg-clip-text hover:text-transparent'
-                  : ''
-              }
-                `}
-                  />
-                </div>
+              {socialInputs.length < 3 ? (
+                <Button
+                  variant="text"
+                  text="Add a row"
+                  class="mb-10"
+                  onClick={handleAddRow}
+                />
               ) : null}
               <div class="flex flex-row h-[46px] smContactForm:h-[42px] gap-[10px] smContactForm:gap-5">
                 <Button

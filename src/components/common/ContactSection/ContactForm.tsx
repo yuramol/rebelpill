@@ -1,6 +1,6 @@
-import { $, component$, useSignal } from '@builder.io/qwik';
+import { $, component$ } from '@builder.io/qwik';
 
-import { Button, Input, Typography, Icon } from '~/components/ui';
+import { Button, Input, Typography } from '~/components/ui';
 
 import { AddSocialModal } from './AddSocialModal';
 import { itProfessions } from './helpers';
@@ -10,14 +10,8 @@ interface ContactFormProps {
 }
 
 export const ContactForm = component$<ContactFormProps>(({ tab }) => {
-  const isHovered = useSignal(false);
-
   const toggleModal = $(() => {
     document.getElementById('modal')?.classList.toggle('hidden');
-  });
-
-  const toggleHovered = $(() => {
-    isHovered.value = !isHovered.value;
   });
 
   return (
@@ -42,25 +36,12 @@ export const ContactForm = component$<ContactFormProps>(({ tab }) => {
       </div>
 
       {tab === 1 ? (
-        <div
-          class="flex flex-row cursor-pointer gap-[6px] mb-10 smContactForm:mb-5"
-          onClick$={toggleModal}
-          onMouseEnter$={toggleHovered}
-          onMouseLeave$={toggleHovered}
-        >
-          <Icon icon="plus" color={isHovered.value ? '#FF010E' : undefined} />
-          <Typography
-            variant="body1"
-            text="Add a link to my social network"
-            class={`bg-white bg-clip-text text-transparent uppercase
-              ${
-                isHovered.value
-                  ? 'hover:bg-hover-gradient hover:from-primary  hover:bg-clip-text hover:text-transparent'
-                  : ''
-              }
-                `}
-          />
-        </div>
+        <Button
+          variant="text"
+          text="Add a link to my social network"
+          class="mb-10 smContactForm:mb-5"
+          onClick={toggleModal}
+        />
       ) : null}
       <Button variant="outlined-primary" text="SEND" class="mb-5" />
       <div class="flex w-full items-start">

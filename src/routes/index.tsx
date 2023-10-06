@@ -19,10 +19,10 @@ export default component$(() => {
     <div class="flex flex-col">
       <HeroSection />
       <CleanSchemeSection />
+      <BenefitsSection />
       <StepsToSuccessSection />
       <Carousel />
       <ContactSection />
-      <BenefitsSection />
     </div>
   );
 });
