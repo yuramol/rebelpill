@@ -2,9 +2,10 @@ import { component$ } from '@builder.io/qwik';
 
 // Styles
 import styles from './Button.module.css';
+import IconArrowRight from '../Icon/icons/IconArrowRight';
+import { Icon } from '../Icon';
 
 // Components
-import IconArrowRight from '~/components/icons/IconArrowRight';
 
 interface ButtonProps {
   text: string;
@@ -12,7 +13,8 @@ interface ButtonProps {
     | 'contained-primary'
     | 'outlined-primary'
     | 'contained-secondary'
-    | 'outlined-secondary';
+    | 'outlined-secondary'
+    | 'text';
   isLoading?: boolean;
   disabled?: boolean;
   class?: string;
@@ -120,6 +122,24 @@ export const Button = component$<ButtonProps>(
                   'bg-hover-gradient absolute inset-1.5 opacity-0 group-hover/outlined-secondary:opacity-100 z-[-1] transition-all duration-[0.4s]',
                 ]}
               ></span>
+              {text}
+            </button>
+          );
+        case 'text':
+          return (
+            <button
+              type="button"
+              tabIndex={tabIndex}
+              class={[
+                'group flex flex-row  gap-2  items-center uppercase font-normal hover:bg-hover-gradient hover:from-primary hover:bg-clip-text hover:text-transparent',
+                className,
+              ]}
+              onClick$={onClick}
+              disabled={disabled}
+            >
+              <span class="group-hover:text-secondary mb-[2px]">
+                <Icon icon="plus" width={18} height={18} />
+              </span>
               {text}
             </button>
           );

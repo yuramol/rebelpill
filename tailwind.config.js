@@ -10,6 +10,8 @@ module.exports = {
       sm: '440px',
       md: '768px',
       lg: '1024px',
+      smContactForm: '625px',
+      mdContactForm: '1100px',
       xl: '1440px',
     },
     lineHeight: {
@@ -52,19 +54,32 @@ module.exports = {
         dark: {
           DEFAULT: 'var(--dark)',
         },
+        darkSecondary: {
+          DEFAULT: 'var(--dark-secondary)',
+        },
         white: {
           DEFAULT: 'var(--white)',
+        },
+        grey: {
+          DEFAULT: 'var(--grey)',
+        },
+        lightGrey: {
+          DEFAULT: 'var(--light-grey)',
         },
       },
       backgroundImage: {
         'primary-gradient':
-          'conic-gradient(from 217deg at 39.44% 50.14%, #181818 35.759229362010956deg, #FF5C00 69.44697797298431deg, #FF010E 79.72867369651794deg, #FC5B00 102.87469983100891deg, #FF5C00 242.10206508636475deg, #FF000D 251.4223551750183deg, #171719 285.15639066696167deg)',
+          'conic-gradient(from 223.88deg at 34.51% 66.63%, #171719 -94.98deg, #181818 35.76deg, #FF5C00 69.45deg, #FF010E 79.73deg, #FC5B00 102.87deg, #FF5C00 242.1deg, #FF000D 251.42deg, #171719 265.02deg, #181818 395.76deg)',
+        'primary-gradient-mirror':
+          'conic-gradient(from 215.39deg at 17.01% 79.56%, #171719 -94.98deg, #181818 35.76deg, #FF5C00 69.45deg, #FF010E 79.73deg, #FC5B00 102.87deg, #FF5C00 242.1deg, #FF000D 251.42deg, #171719 265.02deg, #181818 395.76deg)',
         'secondary-gradient':
           'conic-gradient(from 217deg at 39.44% 50.14%, #FF5C00 69.44697797298431deg, #FF010E 79.72867369651794deg, #FC5B00 102.87469983100891deg, #FF5C00 242.10206508636475deg, #FF000D 251.4223551750183deg)',
         'stroke-gradient':
           'linear-gradient(0deg, #FF5C00 -9.68%, rgba(255, 92, 0, 0.00) 97.57%)',
         'hover-gradient':
           'linear-gradient(261deg, #FC5B00 31.68%, #FF010E 89.55%)',
+        'step-gradient':
+          'linear-gradient(180deg, #0C0C0C 0%, rgba(12, 12, 12, 0.00) 100%)',
       },
     },
   },
