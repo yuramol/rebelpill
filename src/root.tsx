@@ -1,4 +1,4 @@
-import { component$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useStyles$ } from '@builder.io/qwik';
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -7,8 +7,6 @@ import {
 
 import { RouterHead } from '~/components/common/RouterHead';
 import { DarkThemeLauncher } from '~/components/common/DarkThemeLauncher';
-
-import { initFlowbite } from 'flowbite';
 
 import '@fontsource-variable/inter';
 import globalStyles from '~/assets/styles/global.css?inline';
@@ -20,11 +18,6 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
-
-  // TODO remove if don't use flowbite
-  useVisibleTask$(() => {
-    initFlowbite();
-  });
 
   useStyles$(globalStyles);
 
