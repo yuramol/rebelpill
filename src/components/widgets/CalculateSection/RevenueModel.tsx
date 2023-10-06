@@ -19,26 +19,19 @@ export const RevenueModel = component$(() => {
   });
 
   const handleRangeChange = $((event: any) => {
-    range.value = event.target.value;
-  });
-
-  const handleSetRange = $(() => {
-    if (range.value < 1.4) {
+    if (+event.target.value < 1.4) {
       range.value = projectsDurationTime[0].range;
     }
-    if (range.value < 2.2 && range.value > 1.3) {
+    if (+event.target.value >= 1.4 && +event.target.value < 2.2) {
       range.value = projectsDurationTime[1].range;
     }
-
-    if (range.value < 3.2 && range.value > 2.1) {
+    if (+event.target.value >= 2.2 && +event.target.value < 3.2) {
       range.value = projectsDurationTime[2].range;
     }
-
-    if (range.value < 4.2 && range.value > 3.1) {
+    if (+event.target.value >= 3.2 && +event.target.value < 4.3) {
       range.value = projectsDurationTime[3].range;
     }
-
-    if (range.value > 4.1) {
+    if (+event.target.value >= 4.3) {
       range.value = projectsDurationTime[4].range;
     }
   });
@@ -117,7 +110,6 @@ export const RevenueModel = component$(() => {
             class="h-[6px] max-w-[583px] w-full accent-[#ee5600] border-0 rounded-[5px]"
             id="myRange"
             onChange$={handleRangeChange}
-            onMouseUp$={handleSetRange}
           />
         </div>
 
