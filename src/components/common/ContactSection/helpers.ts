@@ -1,0 +1,23 @@
+export const itProfessions = [
+  { value: 'developer', title: 'Developer' },
+  { value: 'designer', title: 'Designer' },
+  { value: 'systemAdministrator', title: 'System Administrator' },
+  { value: 'databaseAdministrator', title: 'Database Administrator' },
+  { value: 'networkEngineer', title: 'Network Engineer' },
+  { value: 'securityAnalyst', title: 'Security Analyst' },
+  { value: 'dataScientist', title: 'Data Scientist' },
+  { value: 'qaTester', title: 'QA Tester' },
+  { value: 'projectManager', title: 'Project Manager' },
+  { value: 'businessAnalyst', title: 'Business Analyst' },
+  { value: 'devopsEngineer', title: 'DevOps Engineer' },
+  { value: 'cloudArchitect', title: 'Cloud Architect' },
+  { value: 'dataEngineer', title: 'Data Engineer' },
+  { value: 'mobileDeveloper', title: 'Mobile Developer' },
+  { value: 'gameDeveloper', title: 'Game Developer' },
+  { value: 'uiUxDesigner', title: 'UI/UX Designer' },
+  { value: 'blockchainDeveloper', title: 'Blockchain Developer' },
+  {
+    value: 'artificialIntelligenceEngineer',
+    title: 'Artificial Intelligence Engineer',
+  },
+];

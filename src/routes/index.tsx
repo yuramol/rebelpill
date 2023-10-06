@@ -1,6 +1,6 @@
 import { component$, $, useSignal } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { Wrapper } from '~/components/common';
+import { ContactSection, Wrapper } from '~/components/common';
 import { Button, Input } from '~/components/ui';
 import { Icon } from '~/components/icons/Icon';
 
@@ -18,6 +18,7 @@ export default component$(() => {
   return (
     <div class="flex flex-col">
       <Wrapper class="flex flex-col gap-10 my-10">
+        <ContactSection />
         <div class="flex flex-row gap-10 my-4">
           <Button
             tabIndex={1}
