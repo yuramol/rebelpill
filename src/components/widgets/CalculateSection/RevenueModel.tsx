@@ -3,22 +3,48 @@ import { $, component$, useSignal } from '@builder.io/qwik';
 import { Input, Typography } from '~/components/ui';
 
 const projectsDurationTime = [
-  { id: '1', label: '5 - 10' },
-  { id: '2', label: '10 - 100' },
-  { id: '3', label: '100 - 300' },
-  { id: '4', label: '300 - 1 000' },
-  { id: '5', label: '1 000 - 10 000' },
+  { id: '1', label: '5 - 10', range: 1 },
+  { id: '2', label: '10 - 100', range: 1.8 },
+  { id: '3', label: '100 - 300', range: 2.7 },
+  { id: '4', label: '300 - 1 000', range: 3.6 },
+  { id: '5', label: '1 000 - 10 000', range: 5 },
 ];
 
 export const RevenueModel = component$(() => {
   const selectedProjectDurationTime = useSignal('roomPrivate');
+  const range = useSignal(projectsDurationTime[1].range);
 
   const handleRadioChange = $((event: any) => {
     selectedProjectDurationTime.value = event.target.id;
   });
 
+  const handleRangeChange = $((event: any) => {
+    range.value = event.target.value;
+  });
+
+  const handleSetRange = $(() => {
+    if (range.value < 1.4) {
+      range.value = projectsDurationTime[0].range;
+    }
+    if (range.value < 2.2 && range.value > 1.3) {
+      range.value = projectsDurationTime[1].range;
+    }
+
+    if (range.value < 3.2 && range.value > 2.1) {
+      range.value = projectsDurationTime[2].range;
+    }
+
+    if (range.value < 4.2 && range.value > 3.1) {
+      range.value = projectsDurationTime[3].range;
+    }
+
+    if (range.value > 4.1) {
+      range.value = projectsDurationTime[4].range;
+    }
+  });
+
   return (
-    <div class="flex flex-col w-full max-w-[743px] max-h-full xl:max-h-[468px] py-[30px] px-5 md:px-8 md:py-11 lg:p-[60px] lg:pr-[96px] border border-[rgba(255, 255, 255, 0.50)] rounded-es-none md:rounded-es-[5px] rounded-se-[5px] md:rounded-se-none rounded-tl-[5px]">
+    <div class="flex flex-col w-full max-w-[743px] max-h-full xl:max-h-[468px] py-[30px] px-5 md:px-8 md:py-11 lg:p-[60px] lg:pr-[96px] border border-[rgba(255, 255, 255, 0.50)] rounded-es-none rounded-br-none md:rounded-br-[5px] xl:rounded-br-none rounded-se-[5px] md:rounded-es-[5px] xl:rounded-se-none rounded-tl-[5px]">
       <Typography
         variant="h2"
         text="Revenue Model"
@@ -77,20 +103,21 @@ export const RevenueModel = component$(() => {
           />
         </div>
         <div class="hidden xl:flex flex-col gap-[14px]">
-          <div class="flex flex-row justify-between w-[660px]">
-            <div>5 - 10</div>
-            <div>10 - 100</div>
-            <div>100 - 300</div>
-            <div>300 - 1 000</div>
-            <div>1 000 - 10 000</div>
+          <div class="flex flex-row justify-between">
+            {projectsDurationTime.map(({ id, label }) => (
+              <div key={id}>{label}</div>
+            ))}
           </div>
           <input
             type="range"
-            min="1"
-            max="5"
-            value="1"
-            class="h-[6px] max-w-[583px] w-full accent-primary border-0 rounded-[5px]"
+            min={1}
+            max={5}
+            value={range.value}
+            step={0.1}
+            class="h-[6px] max-w-[583px] w-full accent-[#ee5600] border-0 rounded-[5px]"
             id="myRange"
+            onChange$={handleRangeChange}
+            onMouseUp$={handleSetRange}
           />
         </div>
 
