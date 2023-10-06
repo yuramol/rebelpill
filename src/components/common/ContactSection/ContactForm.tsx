@@ -1,7 +1,6 @@
 import { $, component$, useSignal } from '@builder.io/qwik';
 
-import { Icon } from '~/components/icons';
-import { Button, Input, Typography } from '~/components/ui';
+import { Button, Input, Typography, Icon } from '~/components/ui';
 
 import { AddSocialModal } from './AddSocialModal';
 import { itProfessions } from './helpers';

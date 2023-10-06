@@ -1,6 +1,6 @@
 import { $, component$, useSignal } from '@builder.io/qwik';
-import { Icon } from '~/components/icons';
-import { Button, Typography } from '~/components/ui';
+
+import { Button, Typography, Icon } from '~/components/ui';
 import { ContactForm } from './ContactForm';
 
 export const ContactSection = component$(() => {

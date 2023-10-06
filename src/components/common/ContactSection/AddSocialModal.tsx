@@ -1,8 +1,7 @@
 import type { QRL } from '@builder.io/qwik';
 import { $, component$, useSignal } from '@builder.io/qwik';
-import { Icon } from '~/components/icons';
 
-import { Button, Input, Typography } from '~/components/ui';
+import { Button, Input, Typography, Icon } from '~/components/ui';
 
 interface ContactFormProps {
   toggleModal: QRL<() => void>;

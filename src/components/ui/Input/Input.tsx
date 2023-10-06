@@ -4,7 +4,7 @@ import { cn } from '~/utils/utils';
 import type { InputProps } from './helpers';
 
 import './style.css';
-import { Icon } from '~/components/icons';
+import { Icon } from '../Icon';
 
 export const Input = component$(
   ({
