@@ -29,8 +29,6 @@ export default component$(() => {
       <BenefitsSection />
       <StepsToSuccessSection />
 
-      <Carousel />
-
       {/* legos */}
       <Wrapper class="flex flex-col gap-10 my-10">
         <div class="flex flex-row gap-10 my-4">

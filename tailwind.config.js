@@ -6,6 +6,7 @@ const colors = require('tailwindcss/colors');
 module.exports = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
+    // TODO remove if don't use flowbite
     './node_modules/flowbite/**/*.js',
   ],
   theme: {
@@ -78,6 +79,10 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    // TODO remove if don't use flowbite
+    require('flowbite/plugin'),
+  ],
   darkMode: 'class',
 };

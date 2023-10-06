@@ -21,7 +21,7 @@ export default component$(() => {
    * Dont remove the `<head>` and `<body>` elements.
    */
 
-  // initialise the event listeners for the data attributes on render
+  // TODO remove if don't use flowbite
   useVisibleTask$(() => {
     initFlowbite();
   });
