@@ -79,10 +79,10 @@ export const BenefitsSection = component$(() => {
         text="Benefits model"
         class="uppercase text-center mb-24"
       />
-      <div class="swiper relative h-full w-[960px] ">
+      <div class="swiper h-full w-[960px]">
         <div class="swiper-wrapper flex items-end">
           {benefits.map((benefit, index) => (
-            <div key={index} class="swiper-slide swiper-slide-active">
+            <div key={index} class="swiper-slide swiper-slide-active ">
               <BenefitCard title={benefit.title} subtitle={benefit.subtitle} />
             </div>
           ))}
