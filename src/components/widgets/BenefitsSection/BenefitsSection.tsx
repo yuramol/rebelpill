@@ -64,9 +64,9 @@ export const BenefitsSection = component$(() => {
       grabCursor: true,
       coverflowEffect: {
         rotate: 0,
-        stretch: 0,
+        stretch: -40,
         depth: 100,
-        modifier: 1,
+        modifier: 2,
         slideShadows: true,
       },
     });
@@ -79,19 +79,14 @@ export const BenefitsSection = component$(() => {
         text="Benefits section"
         class="uppercase text-center mb-24"
       />
-      <div class="swiper relative h-full w-[1210px]">
+      <div class="swiper relative h-full w-[960px] ">
         <div class="swiper-wrapper flex items-end">
           {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              class="swiper-slide swiper-slide-active max-w-[320px] mx-10"
-            >
+            <div key={index} class="swiper-slide swiper-slide-active">
               <BenefitCard title={benefit.title} subtitle={benefit.subtitle} />
             </div>
           ))}
         </div>
-        <div class="absolute top-0 left-0 h-full w-[50px] bg-dark z-50"></div>
-        <div class="absolute top-0 right-0 h-full w-[40px] bg-dark z-50"></div>
       </div>
     </div>
   );
