@@ -19,20 +19,23 @@ export const RevenueModel = component$(() => {
   });
 
   const handleRangeChange = $((event: any) => {
+    range.value = Math.random();
+    const randomValue = Math.random() * (0.00009999 - 0.00000001) + 0.00000001;
+
     if (+event.target.value < 1.4) {
-      range.value = projectsDurationTime[0].range;
+      range.value = projectsDurationTime[0].range + randomValue;
     }
     if (+event.target.value >= 1.4 && +event.target.value < 2.2) {
-      range.value = projectsDurationTime[1].range;
+      range.value = projectsDurationTime[1].range + randomValue;
     }
     if (+event.target.value >= 2.2 && +event.target.value < 3.2) {
-      range.value = projectsDurationTime[2].range;
+      range.value = projectsDurationTime[2].range + randomValue;
     }
     if (+event.target.value >= 3.2 && +event.target.value < 4.3) {
-      range.value = projectsDurationTime[3].range;
+      range.value = projectsDurationTime[3].range + randomValue;
     }
     if (+event.target.value >= 4.3) {
-      range.value = projectsDurationTime[4].range;
+      range.value = projectsDurationTime[4].range + randomValue;
     }
   });
 
