@@ -3,7 +3,6 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 
 import { ContactSection } from '~/components/common';
 
-import { Carousel } from '~/components/ui';
 import {
   HeroSection,
   StepsToSuccessSection,
@@ -21,7 +20,6 @@ export default component$(() => {
       <CleanSchemeSection />
       <BenefitsSection />
       <StepsToSuccessSection />
-      <Carousel />
       <ContactSection />
       <FollowUsSection />
     </div>
