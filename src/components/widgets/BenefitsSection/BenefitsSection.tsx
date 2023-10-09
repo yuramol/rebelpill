@@ -33,8 +33,16 @@ export const benefits = [
     subtitle: 'You have passive income',
   },
   {
+    title: 'We do your work',
+    subtitle: 'You have more free time',
+  },
+  {
     title: 'You bring the client',
     subtitle: 'you increase your customer base',
+  },
+  {
+    title: 'You earn money',
+    subtitle: 'You have passive income',
   },
 ];
 
