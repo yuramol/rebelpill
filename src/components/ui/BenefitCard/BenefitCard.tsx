@@ -11,8 +11,11 @@ export interface BenefitCardProps {
 export const BenefitCard = component$<BenefitCardProps>(
   ({ title, subtitle }) => {
     return (
-      <div class="h-[400px] max-w-[320px] w-full">
-        <WrapperGradient rootClass="rounded before:rounded" childClass="gap-4">
+      <div class="h-full w-full min-h-[400px]">
+        <WrapperGradient
+          rootClass="rounded before:rounded"
+          childClass="gap-4 min-h-[400px]"
+        >
           {/* title */}
           <Typography
             text={title}
