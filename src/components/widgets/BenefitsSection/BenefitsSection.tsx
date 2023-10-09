@@ -2,10 +2,10 @@ import { component$, useVisibleTask$ } from '@builder.io/qwik';
 import Swiper from 'swiper';
 import { EffectCoverflow, Autoplay } from 'swiper/modules';
 
+import { BenefitCard, Typography } from '~/components/ui';
+
 // Import Swiper styles
 import 'swiper/css';
-import './style.css';
-import { BenefitCard, Typography } from '~/components/ui';
 
 export const benefits = [
   {
