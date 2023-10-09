@@ -1,6 +1,6 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik';
 import Swiper from 'swiper';
-import { EffectCoverflow } from 'swiper/modules';
+import { EffectCoverflow, Autoplay } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -54,7 +54,12 @@ export const BenefitsSection = component$(() => {
       loop: true,
       centeredSlides: true,
       initialSlide: 1,
-      modules: [EffectCoverflow],
+      autoplay: {
+        disableOnInteraction: false,
+        delay: 4000,
+        pauseOnMouseEnter: true,
+      },
+      modules: [EffectCoverflow, Autoplay],
       effect: 'coverflow',
       grabCursor: true,
       coverflowEffect: {
@@ -63,11 +68,6 @@ export const BenefitsSection = component$(() => {
         depth: 100,
         modifier: 1,
         slideShadows: true,
-      },
-      pagination: true,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
       },
     });
   });
