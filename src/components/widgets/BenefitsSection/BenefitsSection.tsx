@@ -1,6 +1,6 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik';
 import Swiper from 'swiper';
-import { EffectCoverflow, Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
 import { BenefitCard, Typography } from '~/components/ui';
 
@@ -50,25 +50,14 @@ export const BenefitsSection = component$(() => {
   useVisibleTask$(() => {
     new Swiper('.swiper', {
       // See examples here: https://swiperjs.com/demos
-      slidesPerView: 3,
       loop: true,
-      centeredSlides: true,
-      initialSlide: 1,
+      slidesPerView: 'auto',
       autoplay: {
+        delay: 2000,
         disableOnInteraction: false,
-        delay: 4000,
-        pauseOnMouseEnter: true,
       },
-      modules: [EffectCoverflow, Autoplay],
-      effect: 'coverflow',
-      grabCursor: true,
-      coverflowEffect: {
-        rotate: 0,
-        stretch: -40,
-        depth: 100,
-        modifier: 2,
-        slideShadows: true,
-      },
+      centeredSlides: true,
+      modules: [Autoplay],
     });
   });
 
@@ -79,10 +68,10 @@ export const BenefitsSection = component$(() => {
         text="Benefits model"
         class="uppercase text-center mb-24"
       />
-      <div class="swiper h-full w-[960px]">
+      <div class="swiper h-full max-w-[1100px]">
         <div class="swiper-wrapper flex items-end">
           {benefits.map((benefit, index) => (
-            <div key={index} class="swiper-slide swiper-slide-active ">
+            <div key={index} class="swiper-slide">
               <BenefitCard title={benefit.title} subtitle={benefit.subtitle} />
             </div>
           ))}
