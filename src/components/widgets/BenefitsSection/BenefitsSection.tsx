@@ -76,7 +76,7 @@ export const BenefitsSection = component$(() => {
     <div class="py-[120px] overflow-hidden relative before:content-[''] before:h-[130px] before:w-[200px] before:md:h-[150px] before:md:w-[150px] before:bg-primary before:absolute before:rounded-[50%] before:blur-[125px] before:md:blur-[150px] before:left-1/2 before:bottom-[37%] before:transform before:-translate-x-1/2">
       <Typography
         variant="button"
-        text="Benefits section"
+        text="Benefits model"
         class="uppercase text-center mb-24"
       />
       <div class="swiper relative h-full w-[960px] ">
