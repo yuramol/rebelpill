@@ -9,7 +9,7 @@ export const FollowUsSection = component$(() => {
   const videos = [Video, Video, Video, Video, Video, Video, Video];
 
   useVisibleTask$(() => {
-    new Swiper('.mySwiper', {
+    new Swiper('.followSwiper', {
       slidesPerView: 5,
       initialSlide: 1,
       loop: true,
@@ -35,12 +35,12 @@ export const FollowUsSection = component$(() => {
       ]}
     >
       <div class="flex w-full items-center justify-center">
-        <div class="mySwiper w-full h-full max-w-[1440px]">
+        <div class="followSwiper w-full h-full max-w-[1440px]">
           <div class="swiper-wrapper flex items-center">
             {Array.from({ length: 10 }).map((item, index) => (
               <div
                 key={index}
-                class="swiper-slide h-[530px] w-[350px] bg-dark mx-10"
+                class="swiper-slide h-[530px] w-[350px] bg-dark mx-6"
                 style={{
                   transform:
                     'translate3d(0px, 150px, 0px) rotateX(0deg) rotateY(0deg) scale(1) !important',
