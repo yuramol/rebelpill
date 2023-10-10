@@ -5,7 +5,13 @@ import { BottomTop, FinalLogo, FinalPill, StartTop } from './svg';
 
 export const Preloader = component$(() => {
   const handlePreloader = $(() => {
-    document.getElementById('preloader')?.classList.add('active');
+    const preloader = document.getElementById('preloader');
+    preloader?.classList.add('active');
+    setTimeout(() => {
+      if (preloader) {
+        preloader.style.display = 'none';
+      }
+    }, 3000);
   });
 
   return (
