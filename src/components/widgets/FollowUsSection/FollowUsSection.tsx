@@ -1,9 +1,31 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useVisibleTask$ } from '@builder.io/qwik';
+
+import Swiper from 'swiper';
+import { EffectCoverflow } from 'swiper/modules';
 
 import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
 
 export const FollowUsSection = component$(() => {
-  const videos = [Video];
+  const videos = [Video, Video, Video, Video, Video, Video, Video];
+
+  useVisibleTask$(() => {
+    new Swiper('.mySwiper', {
+      slidesPerView: 5,
+      initialSlide: 1,
+      loop: true,
+      freeMode: true,
+      modules: [EffectCoverflow],
+      effect: 'coverflow',
+      grabCursor: true,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 0,
+        slideShadows: true,
+      },
+    });
+  });
 
   return (
     <section
@@ -12,25 +34,24 @@ export const FollowUsSection = component$(() => {
         "before:content-[''] before:bg-primary-gradient-mirror before:absolute before:inset-0 before:-scale-x-100",
       ]}
     >
-      <div class="w-full flex gap-8 overflow-hidden absolute left-0 top-[200px]">
-        {/* videos */}
-        {videos.length &&
-          videos.map((video, index) => {
-            return (
+      <div class="flex w-full items-center justify-center">
+        <div class="mySwiper w-full h-full max-w-[1440px]">
+          <div class="swiper-wrapper flex items-center">
+            {Array.from({ length: 10 }).map((item, index) => (
               <div
                 key={index}
-                class="h-[440px] max-w-[250px] w-full overflow-hidden"
-                style={{ marginBottom: `${index}em` }}
+                class="swiper-slide h-[530px] w-[350px] bg-dark mx-10"
+                style={{
+                  transform:
+                    'translate3d(0px, 150px, 0px) rotateX(0deg) rotateY(0deg) scale(1) !important',
+                  color: 'red',
+                }}
               >
-                <video key={index} class="h-full w-full" muted loop controls>
-                  <source src={video} type="video/mp4" />
-                </video>
+                {index}
               </div>
-            );
-          })}
-
-        {/* chip */}
-        <div></div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
