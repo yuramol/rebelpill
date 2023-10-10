@@ -1,12 +1,14 @@
-import { $, component$ } from '@builder.io/qwik';
+import { component$, useVisibleTask$ } from '@builder.io/qwik';
 
 import './style.css';
 import { BottomTop, FinalLogo, FinalPill, StartTop } from './svg';
 
 export const Preloader = component$(() => {
-  const handlePreloader = $(() => {
+  useVisibleTask$(() => {
     const preloader = document.getElementById('preloader');
-    preloader?.classList.add('active');
+    if (preloader) {
+      preloader.classList.add('active');
+    }
     setTimeout(() => {
       if (preloader) {
         preloader.style.display = 'none';
@@ -15,7 +17,7 @@ export const Preloader = component$(() => {
   });
 
   return (
-    <div class="preloader px-5" id="preloader" onClick$={handlePreloader}>
+    <div class="preloader px-5" id="preloader">
       <div class="preloader_start">
         <div class="preloader_start-top">
           <StartTop />
