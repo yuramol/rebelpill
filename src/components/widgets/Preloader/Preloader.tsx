@@ -1,22 +1,31 @@
-import { component$ } from '@builder.io/qwik';
+import { $, component$ } from '@builder.io/qwik';
 
 import './style.css';
-// import { WelcomeSvg } from './WelcomeSvg';
-import { RebelPillSvg } from './RebelPillSvg';
-import { RebelPillMobileSvg } from './RebelPillMobileSvg';
-import { WelcomeMobileSvg } from './WelcomeMobileSvg';
+import { BottomTop, FinalLogo, FinalPill, StartTop } from './svg';
 
 export const Preloader = component$(() => {
-  return (
-    <div class="fixed top-0 left-0 w-full h-[100vh] overflow-hidden z-[1000] bg-dark flex justify-center items-center">
-      <div class="text-center text-white font-bold text-[140px] leading-[114px] uppercase">
-        {/* <WelcomeSvg /> */}
-        <WelcomeMobileSvg />
+  const handlePreloader = $(() => {
+    document.getElementById('preloader')?.classList.add('active');
+  });
 
-        {/* <RebelPillSvg /> */}
-        {/* <RebelPillMobileSvg /> */}
+  return (
+    <div class="preloader px-5" id="preloader" onClick$={handlePreloader}>
+      <div class="preloader_start">
+        <div class="preloader_start-top">
+          <StartTop />
+        </div>
+        <div class="preloader_start-bottom">
+          <BottomTop />
+        </div>
       </div>
-      {/* <div class="super h-[265px] w-[620px]"></div> */}
+      <div class="preloader_final">
+        <div class="preloader_final-logo">
+          <FinalLogo />
+        </div>
+        <div class="preloader_final-pill">
+          <FinalPill />
+        </div>
+      </div>
     </div>
   );
 });

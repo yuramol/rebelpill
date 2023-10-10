@@ -1,10 +1,10 @@
-export const RebelPillSvg = () => (
+export const FinalLogo = () => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
     width="950"
     height="140"
     viewBox="0 0 950 140"
     fill="none"
+    xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M106.608 140H75.6897L45.5744 87.2H28.1076V140H0V0H76.0912L99.3804 13.4V73.8L76.0912 87.2L106.608 140ZM28.1076 24V63.2H71.2728V24H28.1076Z"
