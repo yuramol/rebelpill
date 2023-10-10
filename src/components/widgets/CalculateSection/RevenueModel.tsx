@@ -20,6 +20,7 @@ export const RevenueModel = component$(() => {
 
   const handleRangeChange = $((event: any) => {
     range.value = Math.random();
+    // TODO add bind
     const randomValue = Math.random() * 0.00000001;
 
     if (+event.target.value < 1.4) {
