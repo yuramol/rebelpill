@@ -20,7 +20,7 @@ export const RevenueModel = component$(() => {
 
   const handleRangeChange = $((event: any) => {
     range.value = Math.random();
-    const randomValue = Math.random() * (0.00009999 - 0.00000001) + 0.00000001;
+    const randomValue = Math.random() * 0.00000001;
 
     if (+event.target.value < 1.4) {
       range.value = projectsDurationTime[0].range + randomValue;
