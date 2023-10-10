@@ -1,9 +1,11 @@
+import type { IconsNames } from '../Icon';
+
 export interface InputProps {
   error?: string | false | undefined;
   helperText?: string;
-  variant?: 'outlined';
+  variant?: 'outlined' | 'textarea' | 'select';
   label?: string;
-  icon?: any;
+  icon?: IconsNames;
   handleIcon?: () => void;
   onChange?: (value: string) => void;
   extraClass?: string;
@@ -25,4 +27,5 @@ export interface InputProps {
   required?: boolean;
   size?: number;
   step?: number;
+  selectOptions?: { value: string; title: string }[];
 }
