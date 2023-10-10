@@ -4,10 +4,23 @@
 
 @layer base {
   :root {
-    --primary: #fc5b00;
+    --primary: #ff5c00;
     --secondary: #ff010e;
     --dark: #191919;
+    --dark-secondary: #0c0c0c;
     --white: #ffffff;
+    --grey: #ffffff26;
+    --light-grey: #d9d9d9;
+
+    --swiper-image-ratio: 33.3%; /* ratio 16:9 = 56.25% */
+
+    --swiper-width: 400px;
+    --swiper-inactive-scale: 0.75; /* makes the other slide smaller */
+
+    /* responsive settings */
+    --swiper-mobile-width: 250px;
+    --swiper-tablet-width: 300px;
+    --swiper-mobile-inactive-scale: 0.95;
   }
 
   .dark {
@@ -34,4 +47,49 @@
 
 body {
   font-family: 'Oxanium', cursive;
+}
+
+.swiper {
+  position: relative;
+  width: 100%;
+  /* height: calc(var(--swiper-width) * var(--swiper-image-ratio) / 100%); */
+  overflow: hidden;
+}
+
+.swiper-slide {
+  position: relative;
+  width: var(--swiper-width);
+  transform: scale(var(--swiper-inactive-scale));
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+.swiper-backface-hidden .swiper-slide {
+  transform: scale(var(--swiper-inactive-scale)) translateZ(0);
+}
+
+.swiper-slide.swiper-slide-active {
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+
+.swiper-backface-hidden .swiper-slide.swiper-slide-active {
+  transform: scale(1) translateZ(0) !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .swiper-slide {
+    width: var(--swiper-tablet-width);
+    transform: scale(var(--swiper-mobile-inactive-scale));
+  }
+
+  .swiper-backface-hidden .swiper-slide.swiper-slide {
+    transform: scale(var(--swiper-mobile-inactive-scale)) translateZ(0);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .swiper-slide {
+    width: var(--swiper-mobile-width);
+  }
 }
