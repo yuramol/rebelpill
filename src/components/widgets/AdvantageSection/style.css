@@ -1,3 +1,7 @@
 .accordion-content {
   transition: max-height 0.5s ease-out;
 }
+
+.open-collapse {
+  transform: scaleY(-1);
+}

@@ -19,7 +19,14 @@ export const AdvantageItem = component$<AdvantageItemProps>(
     const newMaxHeight = useSignal(0);
     const { stage } = useCSSTransition(onOff, { timeout: 500 });
 
+    const toggleIcon = $(() => {
+      document
+        .getElementById(`arrow-north-east-${number}`)
+        ?.classList.toggle('open-collapse');
+    });
+
     const handleCollapse = $(() => {
+      toggleIcon();
       const el = document.getElementById(`accordion-content-${number}`);
       if (newMaxHeight.value === 0) {
         newMaxHeight.value = el?.scrollHeight as number;
@@ -35,14 +42,17 @@ export const AdvantageItem = component$<AdvantageItemProps>(
           rightPosition ? 'md:ml-auto ' : 'md:mr-auto '
         } ${animateClass}`}
       >
-        <div>
+        <div class="max-w-min">
           <p class="text-sm mb-5">{`00${number}`}</p>
           <div
-            class="accordion-header cursor-pointer transition flex space-x-5 items-center h-16"
+            class="accordion-header cursor-pointer transition flex space-x-5 items-center h-16 mb-2"
             onClick$={handleCollapse}
           >
             <h1 class="text-h3 md:text-h1 uppercase font-semibold">{title}</h1>
-            <div class="h-7 w-7 md:h-11 md:w-11">
+            <div
+              id={`arrow-north-east-${number}`}
+              class="h-7 w-7 md:h-11 md:w-11 transition duration-500"
+            >
               <Icon
                 icon="arrowNorthEast"
                 height="auto"
