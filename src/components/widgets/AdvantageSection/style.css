@@ -1,5 +1,3 @@
 .accordion-content {
-  transition:
-    max-height 0.3s ease-out,
-    padding 0.3s ease;
+  transition: max-height 0.5s ease-out;
 }

@@ -3545,6 +3545,11 @@ queue-tick@^1.0.1:
   resolved "https://registry.yarnpkg.com/queue-tick/-/queue-tick-1.0.1.tgz#f6f07ac82c1fd60f82e098b417a80e52f1f4c142"
   integrity sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==
 
+qwik-transition@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/qwik-transition/-/qwik-transition-0.0.7.tgz#57c3d6db5fd0d0bca47a6ddef76a77b39a0b3c8a"
+  integrity sha512-U1wEJ/RWYuwfuWl8cWToTJASkRogoBGlBKbr/lKhzQYGeLNXk2K7IUXCMtELcUNHEI7J1MyNbjYc5lA6fMbQ8w==
+
 rc@^1.2.7:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/rc/-/rc-1.2.8.tgz#cd924bf5200a075b83c188cd6b9e211b7fc0d3ed"
