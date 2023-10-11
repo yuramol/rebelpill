@@ -1,8 +1,7 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik';
 import 'animate.css';
 import './style.css';
-
-import { Icon } from '~/components/icons/Icon';
+import { Icon } from '~/components/ui';
 
 interface AdvantageItemProps {
   title: string;
@@ -40,15 +39,17 @@ export const AdvantageItem = component$<AdvantageItemProps>(
           rightPosition ? 'md:ml-auto ' : 'md:mr-auto '
         } ${animateClass}`}
       >
-        <p class="text-sm">{`00${number}`}</p>
-
-        <h2 class="md:text-h1">{title}</h2>
-
         <div class="transition ">
+          <p class="text-sm mb-5">{`00${number}`}</p>
           <div class="accordion-header cursor-pointer transition flex space-x-5 items-center h-16">
             <h1 class="text-h3 md:text-h1 uppercase font-semibold">{title}</h1>
             <div class="h-7 w-7 md:h-11 md:w-11">
-              <Icon icon="arrowNorthEast" height="auto" width="auto" />
+              <Icon
+                icon="arrowNorthEast"
+                height="auto"
+                width="auto"
+                color="#ff5c00"
+              />
             </div>
           </div>
           <div class="accordion-content pt-0 overflow-hidden max-h-0">
