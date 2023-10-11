@@ -1,0 +1,12 @@
+.adaptive-size {
+  width: clamp(
+    10.625rem,
+    calc(10.625rem + (15.625 - 10.625) * ((100vw - 20rem) / (81 - 20))),
+    15.625rem
+  );
+  height: clamp(
+    18.75rem,
+    calc(18.75rem + (27.5 - 18.75) * ((100vw - 20rem) / (81 - 20))),
+    27.5rem
+  );
+}

@@ -71,7 +71,7 @@ export const BenefitsSection = component$(() => {
       <div class="swiper h-full max-w-[1100px]">
         <div class="swiper-wrapper flex items-end">
           {benefits.map((benefit, index) => (
-            <div key={index} class="swiper-slide">
+            <div key={index} class="swiper-slide swiper-slide-benefit">
               <BenefitCard title={benefit.title} subtitle={benefit.subtitle} />
             </div>
           ))}

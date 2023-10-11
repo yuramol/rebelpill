@@ -1,53 +1,70 @@
 import { component$, useVisibleTask$ } from '@builder.io/qwik';
 
 import Swiper from 'swiper';
-import { EffectCoverflow } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
+
+import './style.css';
 
 import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
 
 export const FollowUsSection = component$(() => {
-  const videos = [Video, Video, Video, Video, Video, Video, Video];
+  const videos = [
+    Video,
+    Video,
+    Video,
+    Video,
+    Video,
+    Video,
+    Video,
+    Video,
+    Video,
+    Video,
+  ];
 
   useVisibleTask$(() => {
     new Swiper('.followSwiper', {
-      slidesPerView: 5,
-      initialSlide: 1,
+      slidesPerView: 'auto',
       loop: true,
-      freeMode: true,
-      modules: [EffectCoverflow],
-      effect: 'coverflow',
-      grabCursor: true,
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 0,
-        slideShadows: true,
+      // freeMode: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
       },
+      modules: [Autoplay],
     });
   });
 
   return (
     <section
       class={[
-        'min-h-[100vh] w-full  flex overflow-hidden relative py-[20px]',
+        'w-full  flex overflow-hidden relative py-[120px] md:py-[170px]',
         "before:content-[''] before:bg-primary-gradient-mirror before:absolute before:inset-0 before:-scale-x-100",
       ]}
     >
       <div class="flex w-full items-center justify-center">
-        <div class="followSwiper w-full h-full max-w-[1440px]">
+        <div class="followSwiper w-full h-full max-w-[1440px] rotate-[353deg]">
           <div class="swiper-wrapper flex items-center">
-            {Array.from({ length: 10 }).map((item, index) => (
+            {videos.map((video, index) => (
               <div
                 key={index}
-                class="swiper-slide h-[530px] w-[350px] bg-dark mx-6"
-                style={{
-                  transform:
-                    'translate3d(0px, 150px, 0px) rotateX(0deg) rotateY(0deg) scale(1) !important',
-                  color: 'red',
-                }}
+                class="swiper-slide adaptive-size mx-6"
+                // style={{
+                //   width:
+                //     'clamp(10.625rem, calc(10.625rem + (15.625 - 10.625) * ((100vw - 20rem) / (81 - 20))), 15.625rem)',
+                //   height:
+                //     'clamp(18.75rem, calc(18.75rem + (27.5 - 18.75) * ((100vw - 20rem) / (81 - 20))), 27.5rem)',
+                // }}
               >
-                {index}
+                <div
+                  class="w-full h-full overflow-hidden bg-dark"
+                  style={{
+                    transform: 'rotate(5deg)',
+                  }}
+                >
+                  <video key={index} class="h-full w-full" muted loop controls>
+                    <source src={video} type="video/mp4" />
+                  </video>
+                </div>
               </div>
             ))}
           </div>
