@@ -15,7 +15,7 @@ export default component$(() => {
   );
 
   return (
-    <header class="sticky hidden md:flex bottom-5 right-0 z-[1000000] justify-center w-full ">
+    <header class="sticky hidden md:flex bottom-5 right-0 z-[1000] justify-center w-full ">
       {scrollTop > 800 ? (
         <div
           class={`max-w-[704px] bg-dark w-full flex flex-row  p-[10px] gap-[5px] rounded-full border border-gray-400`}
