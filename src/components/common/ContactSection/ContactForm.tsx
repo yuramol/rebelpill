@@ -62,9 +62,10 @@ export const ContactForm = component$<ContactFormProps>(({ tab }) => {
           </div>
           <Typography
             variant="description"
-            text="I agree to receive communications"
             class="uppercase smContactForm:text-[12px] font-extralight"
-          />
+          >
+            I agree to receive communications
+          </Typography>
         </div>
       </div>
       <AddSocialModal toggleModal={toggleSocialModal} />

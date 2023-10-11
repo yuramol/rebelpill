@@ -13,7 +13,9 @@ export const WorkSchemeItem = component$<WorkSchemeItemProps>(
     return (
       <div class={['flex items-center gap-2', className]}>
         <div class="h-[50px] w-[50px] bg-primary-gradient rounded-full hidden md:block"></div>
-        <Typography text={text} variant="h4" class="uppercase text-center" />
+        <Typography variant="h4" class="uppercase text-center">
+          {text}
+        </Typography>
       </div>
     );
   }
