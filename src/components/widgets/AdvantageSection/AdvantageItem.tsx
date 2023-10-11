@@ -51,9 +51,9 @@ export const AdvantageItem = component$<AdvantageItemProps>(
                 color="#ff5c00"
               />
             </div>
-          </div>
-          <div class="accordion-content pt-0 overflow-hidden max-h-0">
-            <p class="pr-7 md:pr-0">{description}</p>
+            <div class="accordion-content pt-0 overflow-hidden max-h-0">
+              <p class="pr-7 md:pr-0">{description}</p>
+            </div>
           </div>
         </div>
       </div>
