@@ -41,7 +41,7 @@ export default component$(() => {
         <DarkThemeLauncher />
         <ServiceWorkerRegister />
       </head>
-      <body class="text-white bg-dark">
+      <body class="bg-dark text-white antialiased">
         <RouterOutlet />
       </body>
     </QwikCityProvider>
