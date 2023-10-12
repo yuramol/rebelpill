@@ -18,7 +18,7 @@ export const CleanSchemeSection = component$(() => {
           childClass="gap-8 md:gap-14"
         >
           {/* title */}
-          <Typography text="Clean scheme of work" variant="h6" />
+          <Typography variant="h6">Clean scheme of work</Typography>
 
           {/* ellipse */}
           <div class="h-[30px] w-[30px] bg-primary-gradient rounded-full block md:hidden"></div>
@@ -28,11 +28,15 @@ export const CleanSchemeSection = component$(() => {
             <WorkSchemeItem text="Your rate" />
 
             {/* minus symbol */}
-            <Typography text="-" variant="h4" class="font-medium" />
+            <Typography variant="h4" class="font-medium">
+              -
+            </Typography>
             <WorkSchemeItem text="Our rate" />
 
             {/* equal symbol */}
-            <Typography text="=" variant="h4" class="font-medium" />
+            <Typography variant="h4" class="font-medium">
+              =
+            </Typography>
             <WorkSchemeItem text="Your passive income" />
           </div>
         </WrapperGradient>
