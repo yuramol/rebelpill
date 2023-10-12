@@ -25,7 +25,7 @@ export const FollowUsSection = component$(() => {
   ];
 
   useVisibleTask$(() => {
-    new Swiper('.followSwiper', {
+    new Swiper('.swiper-slide-follow', {
       slidesPerView: 'auto',
       loop: true,
       autoplay: {
@@ -44,7 +44,7 @@ export const FollowUsSection = component$(() => {
       ]}
     >
       <div class="flex w-full items-center justify-center">
-        <div class="followSwiper w-full h-full max-w-[1440px] rotate-[353deg]">
+        <div class="swiper-slide-follow w-full h-full max-w-[1440px] rotate-[353deg]">
           <div class="swiper-wrapper flex items-center">
             {videos.map((video, index) => (
               <div key={index} class="swiper-slide adaptive-size mx-6">
