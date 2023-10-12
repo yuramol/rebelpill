@@ -6,6 +6,7 @@ import './style.css';
 
 import { Icon, Typography } from '~/components/ui';
 import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
+import { Link } from '@builder.io/qwik-city';
 
 const TIKTOKLINK = 'https://www.tiktok.com/@it.dropshipper?_t=8gRRRNlxGoo&_r=1';
 
@@ -63,7 +64,7 @@ export const FollowUsSection = component$(() => {
         </div>
       </div>
       <div class="absolute z-10 left-[50%] md:left-[70%] bottom-[10%] md:bottom-[18%] rotate-[-4deg] translate-x-[-50%] translate-y-0">
-        <a
+        <Link
           href={TIKTOKLINK}
           target="_blank"
           rel="noopener noreferrer"
@@ -75,7 +76,7 @@ export const FollowUsSection = component$(() => {
             text="Follow us on Tik tok"
             class="whitespace-nowrap uppercase"
           />
-        </a>
+        </Link>
       </div>
     </section>
   );
