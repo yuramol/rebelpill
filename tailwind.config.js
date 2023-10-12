@@ -1,9 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors');
-const { mauve, violet } = require('@radix-ui/colors');
-
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
@@ -61,8 +57,6 @@ module.exports = {
         white: {
           DEFAULT: 'var(--white)',
         },
-        ...mauve,
-        ...violet,
         grey: {
           DEFAULT: 'var(--grey)',
         },
