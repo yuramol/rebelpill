@@ -39,19 +39,16 @@ export const AddSocialModal = component$<AddSocialModalProps>(
             aria-labelledby="modal-headline"
           >
             <div class="flex flex-col items-center">
-              <Typography
-                variant="h6"
-                text="Added social networks will speed up the processing of your application"
-                class="uppercase mb-10"
-              />
+              <Typography variant="h6" class="uppercase mb-10">
+                Added social networks will speed up the processing of your
+                application
+              </Typography>
               <div class="w-full flex flex-col mb-10">
                 {socialInputs.map(({ placeholder, id }, index) => (
                   <div key={id} class="flex flex-row items-center gap-5">
-                    <Typography
-                      variant="body1"
-                      text={`0${index + 1}`}
-                      class="pt-4"
-                    />
+                    <Typography variant="body1" class="pt-4">{`0${
+                      index + 1
+                    }`}</Typography>
                     <Input placeholder={placeholder ?? ' '} />
                   </div>
                 ))}

@@ -32,25 +32,18 @@ export const HeroSection = component$(() => {
     <section class="h-screen w-full bg-primary-gradient bg-top flex overflow-hidden">
       <Wrapper class="flex flex-col items-center pt-24 gap-12 relative">
         {/* logo */}
-        <Typography
-          text="REBELPILL"
-          variant="h5"
-          class="text-black !font-semibold uppercase"
-        />
+        <Typography variant="h5" class="text-black !font-semibold uppercase">
+          REBELPILL
+        </Typography>
 
         {/* title */}
         <div>
-          <Typography
-            text="You're not a real coder"
-            variant="h1"
-            class="text-black text-center uppercase"
-          />
-          <Typography
-            text="If it doesn't
-          piss you off"
-            variant="h1"
-            class="text-black text-center uppercase"
-          />
+          <Typography variant="h1" class="text-black text-center uppercase">
+            You're not a real coder
+          </Typography>
+          <Typography variant="h1" class="text-black text-center uppercase">
+            If it doesn't piss you off
+          </Typography>
         </div>
 
         {/* chips */}

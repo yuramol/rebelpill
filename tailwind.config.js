@@ -2,6 +2,7 @@
 
 const defaultTheme = require('tailwindcss/defaultTheme');
 const colors = require('tailwindcss/colors');
+const { mauve, violet } = require('@radix-ui/colors');
 
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -25,15 +26,15 @@ module.exports = {
       8: '76px',
     },
     fontSize: {
-      tiny: '12px',
-      caption: '14px',
+      caption:
+        'clamp(0.75rem, calc(0.75rem + (0.875 - 0.75) * ((100vw - 20rem) / (81 - 20))), 0.875rem)',
       sm: '16px',
       base: '20px',
-      h5: '24px',
-      h4: '32px',
-      h3: '40px',
-      h2: '48px',
-      h1: '64px',
+      h5: 'clamp(1.25rem, calc(1.25rem + (1.5 - 1.25) * ((100vw - 20rem) / (81 - 20))), 1.5rem)',
+      h4: 'clamp(1.75rem, calc(1.75rem + (2 - 1.75) * ((100vw - 20rem) / (81 - 20))), 2rem)',
+      h3: 'clamp(2rem, calc(2rem + (2.5 - 2) * ((100vw - 20rem) / (81 - 20))), 2.5rem)',
+      h2: 'clamp(2rem, calc(2rem + (3 - 2) * ((100vw - 20rem) / (81 - 20))), 3rem)',
+      h1: 'clamp(2.125rem, calc(2.125rem + (4 - 2.125) * ((100vw - 20rem) / (81 - 20))), 4rem)',
     },
     container: {
       center: true,
@@ -60,6 +61,8 @@ module.exports = {
         white: {
           DEFAULT: 'var(--white)',
         },
+        ...mauve,
+        ...violet,
         grey: {
           DEFAULT: 'var(--grey)',
         },
@@ -80,6 +83,20 @@ module.exports = {
           'linear-gradient(261deg, #FC5B00 31.68%, #FF010E 89.55%)',
         'step-gradient':
           'linear-gradient(180deg, #0C0C0C 0%, rgba(12, 12, 12, 0.00) 100%)',
+      },
+      keyframes: {
+        slideDown: {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        slideUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)',
       },
     },
   },

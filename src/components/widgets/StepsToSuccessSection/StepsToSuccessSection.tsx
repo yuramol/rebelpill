@@ -34,7 +34,9 @@ export const StepsToSuccessSection = component$(() => {
     >
       <Wrapper class="min-h-[400px] flex flex-col items-center gap-20">
         {/* title */}
-        <Typography text="Steps to success" variant="h6" class="text-white" />
+        <Typography variant="h6" class="text-white">
+          Steps to success
+        </Typography>
 
         {/* body */}
         <div class="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -17,21 +17,17 @@ export const BenefitCard = component$<BenefitCardProps>(
           childClass="gap-4 min-h-[400px]"
         >
           {/* title */}
-          <Typography
-            text={title}
-            variant="h6"
-            class="text-white uppercase text-center"
-          />
+          <Typography variant="h6" class="text-white uppercase text-center">
+            {title}
+          </Typography>
 
           {/* icon */}
           <Icon icon="arrowDown" />
 
           {/* subtitle */}
-          <Typography
-            text={subtitle}
-            variant="h6"
-            class="text-white uppercase text-center"
-          />
+          <Typography variant="h6" class="text-white uppercase text-center">
+            {subtitle}
+          </Typography>
         </WrapperGradient>
       </div>
     );
