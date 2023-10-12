@@ -1,11 +1,13 @@
-import { component$, useVisibleTask$ } from '@builder.io/qwik';
-
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
+import { component$, useVisibleTask$ } from '@builder.io/qwik';
 
 import './style.css';
 
+import { Icon, Typography } from '~/components/ui';
 import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
+
+const TIKTOKLINK = 'https://www.tiktok.com/@it.dropshipper?_t=8gRRRNlxGoo&_r=1';
 
 export const FollowUsSection = component$(() => {
   const videos = [
@@ -25,7 +27,6 @@ export const FollowUsSection = component$(() => {
     new Swiper('.followSwiper', {
       slidesPerView: 'auto',
       loop: true,
-      // freeMode: true,
       autoplay: {
         delay: 2000,
         disableOnInteraction: false,
@@ -45,16 +46,7 @@ export const FollowUsSection = component$(() => {
         <div class="followSwiper w-full h-full max-w-[1440px] rotate-[353deg]">
           <div class="swiper-wrapper flex items-center">
             {videos.map((video, index) => (
-              <div
-                key={index}
-                class="swiper-slide adaptive-size mx-6"
-                // style={{
-                //   width:
-                //     'clamp(10.625rem, calc(10.625rem + (15.625 - 10.625) * ((100vw - 20rem) / (81 - 20))), 15.625rem)',
-                //   height:
-                //     'clamp(18.75rem, calc(18.75rem + (27.5 - 18.75) * ((100vw - 20rem) / (81 - 20))), 27.5rem)',
-                // }}
-              >
+              <div key={index} class="swiper-slide adaptive-size mx-6">
                 <div
                   class="w-full h-full overflow-hidden bg-dark"
                   style={{
@@ -69,6 +61,21 @@ export const FollowUsSection = component$(() => {
             ))}
           </div>
         </div>
+      </div>
+      <div class="absolute z-10 left-[50%] md:left-[70%] bottom-[10%] md:bottom-[18%] rotate-[-4deg] translate-x-[-50%] translate-y-0">
+        <a
+          href={TIKTOKLINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-row items-center gap-2"
+        >
+          <Icon icon="tikTok" />
+          <Typography
+            variant="body1"
+            text="Follow us on Tik tok"
+            class="whitespace-nowrap uppercase"
+          />
+        </a>
       </div>
     </section>
   );
