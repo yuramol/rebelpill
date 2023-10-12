@@ -16,15 +16,18 @@ export const ContactSection = component$(() => {
           <div class="w-full flex flex-row justify-start smContactForm:justify-center mdContactForm:justify-start  items-center gap-10">
             <Typography
               variant="h4"
-              text="Well, let's try it"
               class="uppercase whitespace-nowrap md:text-h3"
-            />
+            >
+              Well, let's try it
+            </Typography>
             <div class="rotate-180 mdContactForm:rotate-45">
               <Icon icon="arrowNorthEast" width={32} height={32} />
             </div>
           </div>
           <div class="flex flex-col smContactForm:flex-row gap-5 items-start smContactForm:items-center whitespace-nowrap">
-            <Typography variant="body1" text="I want to..." class="mr-5" />
+            <Typography variant="body1" class="mr-5">
+              I want to...
+            </Typography>
             <div class="flex flex-row h-[46px] smContactForm:h-[42px] gap-[10px] smContactForm:gap-5">
               <Button
                 tabIndex={1}

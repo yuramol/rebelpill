@@ -25,15 +25,15 @@ module.exports = {
       8: '76px',
     },
     fontSize: {
-      tiny: '12px',
-      caption: '14px',
+      caption:
+        'clamp(0.75rem, calc(0.75rem + (0.875 - 0.75) * ((100vw - 20rem) / (81 - 20))), 0.875rem)',
       sm: '16px',
       base: '20px',
-      h5: '24px',
-      h4: '32px',
-      h3: '40px',
-      h2: '48px',
-      h1: '64px',
+      h5: 'clamp(1.25rem, calc(1.25rem + (1.5 - 1.25) * ((100vw - 20rem) / (81 - 20))), 1.5rem)',
+      h4: 'clamp(1.75rem, calc(1.75rem + (2 - 1.75) * ((100vw - 20rem) / (81 - 20))), 2rem)',
+      h3: 'clamp(2rem, calc(2rem + (2.5 - 2) * ((100vw - 20rem) / (81 - 20))), 2.5rem)',
+      h2: 'clamp(2rem, calc(2rem + (3 - 2) * ((100vw - 20rem) / (81 - 20))), 3rem)',
+      h1: 'clamp(2.125rem, calc(2.125rem + (4 - 2.125) * ((100vw - 20rem) / (81 - 20))), 4rem)',
     },
     container: {
       center: true,

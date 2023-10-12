@@ -27,21 +27,20 @@ export const StepItem = component$<StepItemProps>(
         {/* header */}
         <div class="flex flex-col gap-3">
           <Typography
-            text={`/0${step}`}
             variant="description"
             class="text-primary"
-          />
-          <Typography text={title} variant="h5" class="uppercase" />
+          >{`/0${step}`}</Typography>
+          <Typography variant="h5" class="uppercase">
+            {title}
+          </Typography>
         </div>
 
         {/*  footer */}
         {isActive && (
           <a href="#form-section" class="w-max flex items-center gap-2">
-            <Typography
-              text="Let's do it"
-              variant="description"
-              class="uppercase"
-            />
+            <Typography variant="description" class="uppercase">
+              Let's do it
+            </Typography>
             <Icon
               icon="arrowNorthEast"
               height="13px"
