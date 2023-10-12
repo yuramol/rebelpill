@@ -12,35 +12,31 @@ export const Profit = component$(() => {
         <div class="flex flex-col md:flex-row flex-wrap gap-[6px] md:gap-[10px] whitespace-nowrap mb-[30px] md:mb-[35px] text-center md:text-left">
           <Typography
             variant="h2"
-            text="Profit"
             class="uppercase leading-[42px] text-h4 md:text-h2"
-          />
-          <Typography
-            variant="description"
-            text="* The calculation is approximate"
-            class="uppercase font-light"
+          >
+            Profit
+          </Typography>
+          <Typography variant="description" class="uppercase font-light">
+            * The calculation is approximate
+          </Typography>
+        </div>
+
+        <div class="flex flex-col md:flex-row w-full justify-between items-start md:items-center gap-[18px] mb-5 md:mb-[100px] lg:mb-[154px]">
+          <Typography variant="button" class="uppercase whitespace-nowrap">
+            Your profit
+          </Typography>
+          <Input
+            variant="outlined"
+            extraClass="max-w-full md:max-w-[160px] h-[47px] w-full text-center text-base"
+            wrapperClass="md:w-auto"
           />
         </div>
 
-        <div class="flex flex-col">
-          <div class="flex flex-col md:flex-row w-full justify-between items-start md:items-center gap-[18px] mb-5 md:mb-[100px] lg:mb-[154px]">
-            <Typography
-              variant="button"
-              text="Your profit"
-              class="uppercase whitespace-nowrap"
-            />
-            <Input
-              variant="outlined"
-              extraClass="max-w-full md:max-w-[160px] h-[47px] w-full text-center text-base"
-              wrapperClass="md:w-auto"
-            />
-          </div>
-          <Button
-            variant="contained-primary"
-            text={`Let's go`}
-            class="max-w-full"
-          />
-        </div>
+        <Button
+          variant="contained-primary"
+          text={`Let's go`}
+          class="max-w-full"
+        />
       </WrapperGradient>
     </div>
   );

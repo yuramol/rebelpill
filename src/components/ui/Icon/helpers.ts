@@ -13,6 +13,7 @@ import {
   Play,
   Heart,
   Home,
+  TikTok,
 } from './icons';
 import type { IconsNamesMapType } from './types';
 
@@ -31,4 +32,5 @@ export const IconsMap: IconsNamesMapType = {
   arrowUp: ArrowUp,
   heart: Heart,
   home: Home,
+  tikTok: TikTok,
 };

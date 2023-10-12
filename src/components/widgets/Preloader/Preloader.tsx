@@ -1,7 +1,9 @@
-import { component$, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
+import { Image } from '@unpic/qwik';
 
-import './style.css';
-import { BottomTop, FinalLogo, FinalPill, StartTop } from './svg';
+import { BottomTop, FinalLogo, StartTop } from './svg';
+
+import styles from './style.css?inline';
 
 export const Preloader = component$(() => {
   useVisibleTask$(() => {
@@ -15,6 +17,8 @@ export const Preloader = component$(() => {
       }
     }, 3000);
   });
+
+  useStyles$(styles);
 
   return (
     <div class="preloader px-5" id="preloader">
@@ -31,7 +35,14 @@ export const Preloader = component$(() => {
           <FinalLogo />
         </div>
         <div class="preloader_final-pill">
-          <FinalPill />
+          <Image
+            src="/src/assets/images/Pill.webp"
+            layout="constrained"
+            width={616}
+            height={264}
+            alt="Rebel Pill"
+          />
+          {/* <FinalPill /> */}
         </div>
       </div>
     </div>
