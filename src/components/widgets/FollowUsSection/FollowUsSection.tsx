@@ -71,11 +71,9 @@ export const FollowUsSection = component$(() => {
           class="flex flex-row items-center gap-2"
         >
           <Icon icon="tikTok" />
-          <Typography
-            variant="body1"
-            text="Follow us on Tik tok"
-            class="whitespace-nowrap uppercase"
-          />
+          <Typography variant="body1" class="whitespace-nowrap uppercase">
+            Follow us on Tik tok
+          </Typography>
         </Link>
       </div>
     </section>
