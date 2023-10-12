@@ -14,6 +14,7 @@ import {
   BenefitsSection,
   ContactSection,
 } from '~/components/widgets';
+import { RebelPillLogo } from '~/components/common';
 
 export default component$(() => {
   return (
@@ -26,6 +27,7 @@ export default component$(() => {
       <StepsToSuccessSection />
       <ContactSection />
       <FollowUsSection />
+      <RebelPillLogo />
     </div>
   );
 });

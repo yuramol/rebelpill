@@ -11,10 +11,20 @@ export default component$(() => {
           <nav>
             <ul class="flex flex-row gap-5 whitespace-nowrap">
               <li>
-                <Link href="/cookies">COOKIES</Link>
+                <Link
+                  href="/cookies"
+                  class="hover:bg-hover-gradient hover:from-primary hover:bg-clip-text hover:text-transparent"
+                >
+                  COOKIES
+                </Link>
               </li>
               <li>
-                <Link href="/privacy-policy">PRIVACY POLICY</Link>
+                <Link
+                  href="/privacy-policy"
+                  class="hover:bg-hover-gradient hover:from-primary hover:bg-clip-text hover:text-transparent"
+                >
+                  PRIVACY POLICY
+                </Link>
               </li>
               <li>{`@${new Date().getFullYear()}`}</li>
             </ul>
