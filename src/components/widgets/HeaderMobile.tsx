@@ -16,7 +16,7 @@ export default component$(() => {
 
   return (
     <>
-      <header class="sticky flex flex-col md:hidden bottom-5 right-0 z-[1000000] items-center w-full justify-center rounded transition-all">
+      <header class="sticky flex flex-col md:hidden bottom-5 right-0 z-[1000] items-center w-full justify-center rounded transition-all">
         {scrollTop > 800 ? (
           <div class="relative w-[230px] flex flex-col items-center">
             <button

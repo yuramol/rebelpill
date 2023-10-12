@@ -9,6 +9,7 @@ import { Icon } from '../Icon';
 export const Input = component$(
   ({
     extraClass = '',
+    wrapperClass = '',
     type,
     label,
     variant,
@@ -22,11 +23,12 @@ export const Input = component$(
     return (
       <>
         {variant === 'outlined' ? (
-          <div class={`relative h-[54px] w-full min-w-[200px]`}>
+          <div class={`relative h-[54px] w-full min-w-[160px] ${wrapperClass}`}>
             <input
               type={type}
               class={cn(
-                `peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-primary focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50`,
+                `peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-primary focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50`,
+                label ? 'focus:border-t-transparent' : '',
                 error
                   ? 'focus:border-secondary focus:border-t-transparent border-secondary'
                   : '',
