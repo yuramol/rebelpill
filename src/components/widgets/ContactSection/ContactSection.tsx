@@ -2,7 +2,7 @@ import { $, component$, useSignal } from '@builder.io/qwik';
 
 import { Button, Typography, Icon } from '~/components/ui';
 import { ContactForm } from './ContactForm';
-import { Wrapper } from '../Wrapper';
+import { Wrapper } from '../../common/Wrapper';
 
 export const ContactSection = component$(() => {
   const tabs = useSignal<1 | 2>(1);

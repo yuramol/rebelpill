@@ -1,7 +1,10 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
+import { Preloader } from '~/components/widgets';
 
-import { ContactSection } from '~/components/common';
+import { SITE } from '~/config.mjs';
+
+import { CalculateSection } from '~/components/widgets/CalculateSection';
 
 import {
   HeroSection,
@@ -9,19 +12,21 @@ import {
   CleanSchemeSection,
   FollowUsSection,
   BenefitsSection,
+  ContactSection,
 } from '~/components/widgets';
-
-import { SITE } from '~/config.mjs';
 
 export default component$(() => {
   return (
     <div class="flex flex-col">
+      <Preloader />
       <HeroSection />
       <CleanSchemeSection />
       <BenefitsSection />
+      <CalculateSection />
       <StepsToSuccessSection />
       <ContactSection />
       <FollowUsSection />
+      <Carousel />
     </div>
   );
 });
