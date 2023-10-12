@@ -62,7 +62,7 @@ export default component$(() => {
                   <li
                     key={id}
                     class={[
-                      'p-[10px] bg-dark rounded-full group w-full  flex whitespace-nowrap justify-center items-center gap-5 shrink-0 overflow-hidden relative z-[1] transition-padding duration-[0.4s]',
+                      'p-[10px] bg-dark rounded-full group w-full  flex whitespace-nowrap justify-center items-center gap-5 shrink-0  shadow-[0px_0px_3px_0px_rgba(255,_255,_255,_0.3)] overflow-hidden relative z-[1] transition-padding duration-[0.4s]',
                       'before:content-[""] before:h-full before:w-0 before:hover:w-full before:rounded-full before:absolute before:top-0 before:left-0 before:transition-all before:duration-[0.4s] before:z-[-1] before:bg-hover-gradient',
                     ]}
                   >
