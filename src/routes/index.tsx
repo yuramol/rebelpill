@@ -14,6 +14,7 @@ import {
   BenefitsSection,
   ContactSection,
 } from '~/components/widgets';
+import { AdvantageSection } from '~/components/widgets/AdvantageSection';
 
 export default component$(() => {
   return (
@@ -21,6 +22,7 @@ export default component$(() => {
       <Preloader />
       <HeroSection />
       <CleanSchemeSection />
+      <AdvantageSection />
       <BenefitsSection />
       <CalculateSection />
       <StepsToSuccessSection />
