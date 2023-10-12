@@ -26,7 +26,6 @@ export default component$(() => {
       <StepsToSuccessSection />
       <ContactSection />
       <FollowUsSection />
-      <Carousel />
     </div>
   );
 });
