@@ -30,7 +30,7 @@ export const HeroSection = component$(() => {
 
   return (
     <section class="h-screen w-full bg-primary-gradient bg-top flex overflow-hidden">
-      <Wrapper class="flex flex-col items-center pt-24 gap-12 relative">
+      <Wrapper class="flex flex-col items-center pt-[60px] md:pt-24 gap-12 relative">
         {/* logo */}
         <Typography variant="h5" class="text-black !font-semibold uppercase">
           REBELPILL
@@ -39,9 +39,8 @@ export const HeroSection = component$(() => {
         {/* title */}
         <div>
           <Typography variant="h1" class="text-black text-center uppercase">
-            You're not a real coder
-          </Typography>
-          <Typography variant="h1" class="text-black text-center uppercase">
+            You're <span class="font-extrabold">not a real coder </span>
+            <br />
             If it doesn't piss you off
           </Typography>
         </div>
