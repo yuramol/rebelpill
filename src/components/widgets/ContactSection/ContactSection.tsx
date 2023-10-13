@@ -20,15 +20,20 @@ export const ContactSection = component$(() => {
             >
               Well, let's try it
             </Typography>
-            <div class="rotate-180 mdContactForm:rotate-45">
-              <Icon icon="arrowNorthEast" width={32} height={32} />
+            <div class="rotate-180 hidden xsContactForm:block mdContactForm:rotate-45">
+              <Icon
+                icon="arrowNorthEast"
+                width={32}
+                height={32}
+                color="#ff5c00"
+              />
             </div>
           </div>
           <div class="flex flex-col smContactForm:flex-row gap-5 items-start smContactForm:items-center whitespace-nowrap">
             <Typography variant="body1" class="mr-5">
               I want to...
             </Typography>
-            <div class="flex flex-row h-[46px] smContactForm:h-[42px] gap-[10px] smContactForm:gap-5">
+            <div class="flex flex-row flex-wrap xsContactForm:flex-nowrap  h-[46px] smContactForm:h-[42px] gap-[10px] smContactForm:gap-5">
               <Button
                 tabIndex={1}
                 text="Start cooperating"
@@ -37,7 +42,7 @@ export const ContactSection = component$(() => {
                     ? 'contained-secondary'
                     : 'outlined-secondary'
                 }
-                class="uppercase min-w-[175px]  smContactForm:min-w-[220px] !text-caption smContactForm:text-sm font-normal smContactForm:font-bold"
+                class="uppercase min-w-[175px] max-w-full  xsContactForm::min-w-full smContactForm:min-w-[220px] !text-caption smContactForm:text-sm font-normal smContactForm:font-bold"
                 onClick={toggleTab}
               />
               <Button
@@ -48,7 +53,7 @@ export const ContactSection = component$(() => {
                     ? 'contained-secondary'
                     : 'outlined-secondary'
                 }
-                class="uppercase min-w-[175px]   smContactForm:min-w-[220px] !text-caption smContactForm:text-sm font-normal smContactForm:font-bold"
+                class="uppercase min-w-[175px] max-w-full  xsContactForm::min-w-full smContactForm:min-w-[220px] !text-caption smContactForm:text-sm font-normal smContactForm:font-bold"
                 onClick={toggleTab}
               />
             </div>
