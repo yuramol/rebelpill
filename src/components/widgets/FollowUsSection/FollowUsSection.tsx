@@ -1,9 +1,9 @@
 import Swiper from 'swiper';
 import { Autoplay } from 'swiper/modules';
 import { Link } from '@builder.io/qwik-city';
-import { component$, useVisibleTask$ } from '@builder.io/qwik';
+import { component$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
 
-import './style.css';
+import styles from './style.css?inline';
 
 import { Icon, Typography } from '~/components/ui';
 import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
@@ -35,6 +35,8 @@ export const FollowUsSection = component$(() => {
       modules: [Autoplay],
     });
   });
+
+  useStyles$(styles);
 
   return (
     <section
