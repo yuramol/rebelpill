@@ -28,6 +28,7 @@ export const FollowUsSection = component$(() => {
     new Swiper('.swiper-follow', {
       slidesPerView: 'auto',
       loop: true,
+      initialSlide: 1,
       autoplay: {
         delay: 2000,
         disableOnInteraction: false,

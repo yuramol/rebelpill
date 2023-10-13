@@ -16,6 +16,7 @@ import {
 } from '~/components/widgets';
 import { RebelPillLogo } from '~/components/common';
 import { AdvantageSection } from '~/components/widgets/AdvantageSection';
+import { Divider } from '~/components/ui';
 
 export default component$(() => {
   return (
@@ -24,9 +25,13 @@ export default component$(() => {
       <HeroSection />
       <CleanSchemeSection />
       <AdvantageSection />
+      <Divider />
       <BenefitsSection />
+      <Divider />
       <CalculateSection />
+      <Divider />
       <StepsToSuccessSection />
+      <Divider />
       <ContactSection />
       <FollowUsSection />
       <RebelPillLogo />

@@ -29,9 +29,7 @@ export const StepsToSuccessSection = component$(() => {
   ];
 
   return (
-    <section
-      class={['w-full bg-dark flex overflow-hidden relative py-[120px]']}
-    >
+    <section class="w-full bg-dark flex overflow-hidden relative py-[180px] md:py-[120px]">
       <Wrapper class="min-h-[400px] flex flex-col items-center gap-20">
         {/* title */}
         <Typography variant="h6" class="text-white">
