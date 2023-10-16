@@ -24,6 +24,6 @@ jobs:
 
       - name: Deploy Build to Server
         run: |
-          echo ${{ secrets.DEV_SSH_KEY }} >> ./key
+          echo '${{ secrets.DEV_SSH_KEY }}' >> ./key
           scp -i $PWD/key -P ${{ secrets.DEV_SSH_PORT }} -r $PWD/dist/* ${{ secrets.DEV_SSH_USERNAME }}@${{ secrets.DEV_SSH_HOST }}:${{ secrets.DEV_SSH_PATH }}
           rm ./key
