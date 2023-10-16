@@ -8,7 +8,7 @@ export const CleanSchemeSection = component$(() => {
   return (
     <section
       class={[
-        'w-full bg-dark flex overflow-hidden relative py-[150px]',
+        'w-full bg-dark flex relative py-[150px]',
         "before:content-[''] before:h-[130px] before:w-[130px] before:md:h-[260px] before:md:w-[260px] before:bg-primary before:absolute before:rounded-[50%] before:blur-[125px] before:md:blur-[250px] before:top-[30%] before:md:top-0 before:left-[-25px] before:md:left-[-50px] before:md:bottom-0 before:md:m-auto",
       ]}
     >
