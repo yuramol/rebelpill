@@ -6,24 +6,10 @@ import { component$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
 import styles from './style.css?inline';
 
 import { Icon, Typography } from '~/components/ui';
-import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
 
 const TIKTOKLINK = 'https://www.tiktok.com/@it.dropshipper?_t=8gRRRNlxGoo&_r=1';
 
 export const FollowUsSection = component$(() => {
-  const videos = [
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-  ];
-
   useVisibleTask$(() => {
     new Swiper('.swiper-follow', {
       slidesPerView: 'auto',
@@ -49,7 +35,7 @@ export const FollowUsSection = component$(() => {
       <div class="flex w-full items-center justify-center">
         <div class="swiper-follow w-full h-full max-w-[1440px] rotate-[353deg]">
           <div class="swiper-wrapper flex items-center">
-            {videos.map((video, index) => (
+            {Array.from({ length: 9 }).map((item, index) => (
               <div key={index} class="swiper-slide adaptive-size mx-6">
                 <div
                   class="w-full h-full overflow-hidden bg-dark"
@@ -57,9 +43,14 @@ export const FollowUsSection = component$(() => {
                     transform: 'rotate(5deg)',
                   }}
                 >
-                  <video key={index} class="h-full w-full" muted loop controls>
-                    <source src={video} type="video/mp4" />
-                  </video>
+                  <iframe
+                    src="https://www.youtube.com/embed/het2TX4eurA?si=krumrz_Q5-U3Ztjd"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    key={index}
+                    class="h-full w-full"
+                  ></iframe>
                 </div>
               </div>
             ))}

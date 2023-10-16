@@ -1,7 +1,7 @@
 import type { QRL } from '@builder.io/qwik';
 import { component$ } from '@builder.io/qwik';
 
-import { Button, Icon, Typography } from '~/components/ui';
+import { Button, Typography } from '~/components/ui';
 
 interface ThankModalProps {
   toggleModal: QRL<() => void>;
