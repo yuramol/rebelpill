@@ -13,6 +13,7 @@ import styles from './style.css?inline';
 
 export const Preloader = component$(() => {
   const isPageLoaded = useSignal(false);
+  const isVisibility = useSignal(false);
 
   useVisibleTask$(() => {
     const preloader = document.getElementById('preloader');
@@ -20,8 +21,11 @@ export const Preloader = component$(() => {
       preloader.classList.add('active');
     }
     setTimeout(() => {
-      isPageLoaded.value = true;
+      isVisibility.value = true;
     }, 3000);
+    setTimeout(() => {
+      isPageLoaded.value = true;
+    }, 3600);
   });
 
   useStyles$(styles);
@@ -29,7 +33,12 @@ export const Preloader = component$(() => {
   return (
     <>
       {!isPageLoaded.value ? (
-        <div class="preloader px-5" id="preloader">
+        <div
+          class={`preloader px-5 opacity-100 ${
+            isVisibility.value ? 'opacity-0' : ''
+          }`}
+          id="preloader"
+        >
           <div class="preloader_start">
             <div class="preloader_start-top">
               <StartTop />
