@@ -24,6 +24,7 @@ jobs:
 
       - name: Deploy Build to Server
         run: |
+          mkdir -p $HOME/.ssh && touch $HOME/.ssh/known_hosts
           ssh-keyscan -t rsa ${{ secrets.DEV_SSH_HOST }} >> $HOME/.ssh/known_hosts
           echo "${{ secrets.DEV_SSH_KEY }}" >> ./key
           chmod 400 ./key
