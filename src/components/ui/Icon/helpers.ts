@@ -11,7 +11,6 @@ import {
   Plus,
   PlusGradient,
   Play,
-  Heart,
   Home,
   TikTok,
 } from './icons';
@@ -30,7 +29,6 @@ export const IconsMap: IconsNamesMapType = {
   plusGradient: PlusGradient,
   play: Play,
   arrowUp: ArrowUp,
-  heart: Heart,
   home: Home,
   tikTok: TikTok,
 };

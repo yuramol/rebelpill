@@ -14,7 +14,6 @@ export type IconsNames =
   | 'plus'
   | 'plusGradient'
   | 'play'
-  | 'heart'
   | 'home'
   | 'tikTok';
 

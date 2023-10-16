@@ -26,13 +26,9 @@ export const ThankModal = component$<ThankModalProps>(({ toggleModal }) => (
         aria-labelledby="modal-headline"
       >
         <div class="flex flex-col items-center gap-10 text-center">
-          <div class="flex flex-row items-center">
-            <Icon icon="heart" />
-            <Typography variant="button" class="uppercase ">
-              Thanks for connecting with us!
-            </Typography>
-            <Icon icon="heart" />
-          </div>
+          <Typography variant="button" class="uppercase ">
+            Thanks for connecting with us!
+          </Typography>
 
           <Typography variant="body1">
             Your request has landed safely in our inbox. 📬 Sit back, relax, and
