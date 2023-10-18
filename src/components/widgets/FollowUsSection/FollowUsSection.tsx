@@ -44,10 +44,9 @@ export const FollowUsSection = component$(() => {
                   }}
                 >
                   <blockquote
-                    class="tiktok-embed"
+                    class="tiktok-embed w-full h-full"
                     cite="https://www.tiktok.com/@it.dropshipper/video/7276546441470922026"
                     data-video-id="7276546441470922026"
-                    style="max-width: 605px;min-width: 325px;"
                   >
                     {" "}
                     <section>
