@@ -1,14 +1,30 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useVisibleTask$ } from '@builder.io/qwik';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-// Components
 import { WorkSchemeItem, Wrapper } from '~/components/common';
 import { Typography, WrapperGradient } from '~/components/ui';
 
 export const CleanSchemeSection = component$(() => {
+  useVisibleTask$(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const animation = gsap.to('.clean-scheme-gsap', {
+      scrollTrigger: {
+        trigger: '.clean-scheme-gsap',
+        start: '20px 60%',
+      },
+      scale: 1,
+      duration: 1,
+    });
+
+    return () => {
+      animation.kill();
+    };
+  });
   return (
     <section
       class={[
-        'w-full bg-dark flex relative py-[150px]',
+        'clean-scheme-gsap scale-75 w-full bg-dark flex relative py-[150px]',
         "before:content-[''] before:h-[130px] before:w-[130px] before:md:h-[260px] before:md:w-[260px] before:bg-primary before:absolute before:rounded-[50%] before:blur-[125px] before:md:blur-[250px] before:top-[30%] before:md:top-0 before:left-[-25px] before:md:left-[-50px] before:md:bottom-0 before:md:m-auto",
       ]}
     >

@@ -1,7 +1,6 @@
 import { component$, Slot } from '@builder.io/qwik';
 
 import Header from '~/components/widgets/Header';
-import HeaderMobile from '../HeaderMobile';
 import Footer from '../Footer';
 
 export const MainLayout = component$(() => {
@@ -11,7 +10,6 @@ export const MainLayout = component$(() => {
         <Slot />
       </main>
       <Header />
-      <HeaderMobile />
       <Footer />
     </div>
   );

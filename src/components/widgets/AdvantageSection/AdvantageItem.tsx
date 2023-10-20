@@ -1,7 +1,8 @@
-import { $, component$, useSignal } from '@builder.io/qwik';
+import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 import { useCSSTransition } from 'qwik-transition';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 
-import 'animate.css';
 import './style.css';
 import { Icon } from '~/components/ui';
 
@@ -10,11 +11,10 @@ interface AdvantageItemProps {
   number: number;
   rightPosition?: boolean;
   description: string;
-  animateClass: string;
 }
 
 export const AdvantageItem = component$<AdvantageItemProps>(
-  ({ number, title, rightPosition, description, animateClass }) => {
+  ({ number, title, rightPosition, description }) => {
     const onOff = useSignal(false);
     const newMaxHeight = useSignal(0);
     const { stage } = useCSSTransition(onOff, { timeout: 500 });
@@ -36,11 +36,30 @@ export const AdvantageItem = component$<AdvantageItemProps>(
       onOff.value = !onOff.value;
     });
 
+    useVisibleTask$(() => {
+      gsap.registerPlugin(ScrollTrigger);
+      const animation = gsap.to(`.advantage-item-gsap-${number}`, {
+        scrollTrigger: {
+          trigger: `.advantage-item-gsap-${number}`,
+          start: '20px 90%',
+        },
+        x: 0,
+        duration: 0.5,
+        ease: 'circ.out',
+      });
+
+      return () => {
+        animation.kill();
+      };
+    });
+
     return (
       <div
-        class={`animate__animated transition-all relative flex flex-col gap-5 ${
-          rightPosition ? 'md:ml-auto ' : 'md:mr-auto '
-        } ${animateClass}`}
+        class={`${`advantage-item-gsap-${number}`}  relative flex flex-col gap-5 ${
+          rightPosition
+            ? 'translate-x-[100%] md:ml-auto '
+            : 'translate-x-[-100%] md:mr-auto '
+        }`}
       >
         <div class="max-w-min">
           <p class="text-sm mb-5">{`00${number}`}</p>
