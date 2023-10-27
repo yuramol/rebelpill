@@ -4,13 +4,20 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     screens: {
-      xsContactForm: '390px',
       sm: '440px',
       md: '768px',
       lg: '1024px',
+      xl: '1440px',
+      xsContactForm: '390px',
       smContactForm: '625px',
       mdContactForm: '1100px',
-      xl: '1440px',
+      Pill1: '370px',
+      Pill2: '400px',
+      Pill3: '430px',
+      Pill4: '470px',
+      Pill5: '520px',
+      Pill6: '536px',
+      Pill7: '570px',
     },
     lineHeight: {
       1: '14px',
@@ -32,6 +39,15 @@ module.exports = {
       h3: 'clamp(2rem, calc(2rem + (2.5 - 2) * ((100vw - 20rem) / (81 - 20))), 2.5rem)',
       h2: 'clamp(2rem, calc(2rem + (3 - 2) * ((100vw - 20rem) / (81 - 20))), 3rem)',
       h1: 'clamp(2.125rem, calc(2.125rem + (4 - 2.125) * ((100vw - 20rem) / (81 - 20))), 4rem)',
+      logo: 'clamp(1.875rem, calc(1.875rem + (5.75 - 1.875) * ((100vw - 20rem) / (81 - 20))), 5.75rem)',
+      logoLg:
+        'clamp(2.7rem, calc(2.7rem + (11 - 2.7) * ((100vw - 20rem) / (81 - 20))), 11rem)',
+      secondSectionTitle:
+        'clamp(1.375rem, calc(1.375rem + (5 - 1.375) * ((100vw - 20rem) / (81 - 20))), 5rem)',
+      secondSectionSubtitle:
+        'clamp(1.125rem, calc(1.125rem + (3.125 - 1.125) * ((100vw - 20rem) / (81 - 20))), 3.125rem)',
+      secondSectionDescription:
+        'clamp(0.875rem, calc(0.875rem + (1.875 - 0.875) * ((100vw - 20rem) / (81 - 20))), 1.875rem)',
     },
     container: {
       center: true,
