@@ -1,6 +1,8 @@
-import { $, component$, useSignal } from '@builder.io/qwik';
+import { $, component$, useSignal, useVisibleTask$ } from '@builder.io/qwik';
 
 import { Input, Typography } from '~/components/ui';
+
+const OURRATE = 40;
 
 const projectsDurationTime = [
   { id: '1', label: '5 - 10', range: 1 },
@@ -13,7 +15,6 @@ const projectsDurationTime = [
 export const RevenueModel = component$(() => {
   const selectedProjectDurationTime = useSignal('2');
   const range = useSignal(projectsDurationTime[1].range);
-
   const customerRateError = useSignal(false);
 
   const handleSetProfit = $((value: string) => {
@@ -24,31 +25,33 @@ export const RevenueModel = component$(() => {
       customerRateError.value = false;
     }
 
+    const projectDurationType = selectedProjectDurationTime.value;
+
     const minProjectDuration =
-      selectedProjectDurationTime.value === '1'
+      projectDurationType === '1'
         ? 5
-        : selectedProjectDurationTime.value === '2'
+        : projectDurationType === '2'
         ? 10
-        : selectedProjectDurationTime.value === '3'
+        : projectDurationType === '3'
         ? 100
-        : selectedProjectDurationTime.value === '4'
+        : projectDurationType === '4'
         ? 300
         : 1000;
 
     const maxProjectDuration =
-      selectedProjectDurationTime.value === '1'
+      projectDurationType === '1'
         ? 10
-        : selectedProjectDurationTime.value === '2'
+        : projectDurationType === '2'
         ? 100
-        : selectedProjectDurationTime.value === '3'
+        : projectDurationType === '3'
         ? 300
-        : selectedProjectDurationTime.value === '4'
+        : projectDurationType === '4'
         ? 1000
         : 10000;
 
     const minValue = (+value - 40) * minProjectDuration;
     const maxValue = (+value - 40) * maxProjectDuration;
-    const profit = `${minValue}$ - ${maxValue}$`;
+    const profit = `$ ${minValue} - $ ${maxValue}`;
     (document.getElementById('profitValue') as HTMLInputElement).value =
       +value > 40 ? profit : '';
   });
@@ -87,7 +90,6 @@ export const RevenueModel = component$(() => {
       range.value = projectsDurationTime[4].range + randomValue;
       selectedProjectDurationTime.value = '5';
     }
-    console.log('range test');
 
     handleSetProfit(
       (
@@ -96,12 +98,20 @@ export const RevenueModel = component$(() => {
     );
   });
 
-  const handleInputChange = $((e: any) => {
+  const handleInputChange = $((event: any) => {
     (document.getElementById('customerValue') as HTMLInputElement).value =
-      e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1') +
-      '$';
+      '$ ' +
+      event.target.value
+        .replace(/[^0-9.]/g, '')
+        .replace(/(\..*?)\..*/g, '$1')
+        .trim(2);
 
-    handleSetProfit(e.target.value.replace(/\$/g, ''));
+    handleSetProfit(event.target.value.replace(/\$/g, ''));
+  });
+
+  useVisibleTask$(() => {
+    (document.getElementById('customerValue') as HTMLInputElement).value = '$ ';
+    (document.getElementById('profitValue') as HTMLInputElement).value = '$ ';
   });
 
   return (
@@ -146,7 +156,7 @@ export const RevenueModel = component$(() => {
               <Input
                 disabled
                 variant="outlined"
-                value="40$"
+                value={`$ ${OURRATE}`}
                 extraClass="max-w-full md:max-w-[160px] h-[47px] text-center text-base "
               />
               <Typography
