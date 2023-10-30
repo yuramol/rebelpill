@@ -11,11 +11,55 @@ const projectsDurationTime = [
 ];
 
 export const RevenueModel = component$(() => {
-  const selectedProjectDurationTime = useSignal('roomPrivate');
+  const selectedProjectDurationTime = useSignal('2');
   const range = useSignal(projectsDurationTime[1].range);
+
+  const customerRateError = useSignal(false);
+
+  const handleSetProfit = $((value: string) => {
+    value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
+    if (+value < 40) {
+      customerRateError.value = true;
+    } else {
+      customerRateError.value = false;
+    }
+
+    const minProjectDuration =
+      selectedProjectDurationTime.value === '1'
+        ? 5
+        : selectedProjectDurationTime.value === '2'
+        ? 10
+        : selectedProjectDurationTime.value === '3'
+        ? 100
+        : selectedProjectDurationTime.value === '4'
+        ? 300
+        : 1000;
+
+    const maxProjectDuration =
+      selectedProjectDurationTime.value === '1'
+        ? 10
+        : selectedProjectDurationTime.value === '2'
+        ? 100
+        : selectedProjectDurationTime.value === '3'
+        ? 300
+        : selectedProjectDurationTime.value === '4'
+        ? 1000
+        : 10000;
+
+    const minValue = (+value - 40) * minProjectDuration;
+    const maxValue = (+value - 40) * maxProjectDuration;
+    const profit = `${minValue}$ - ${maxValue}$`;
+    (document.getElementById('profitValue') as HTMLInputElement).value =
+      +value > 40 ? profit : '';
+  });
 
   const handleRadioChange = $((event: any) => {
     selectedProjectDurationTime.value = event.target.id;
+    handleSetProfit(
+      (
+        document.getElementById('customerValue') as HTMLInputElement
+      ).value.replace(/\$/g, '')
+    );
   });
 
   const handleRangeChange = $((event: any) => {
@@ -25,19 +69,39 @@ export const RevenueModel = component$(() => {
 
     if (+event.target.value < 1.4) {
       range.value = projectsDurationTime[0].range + randomValue;
+      selectedProjectDurationTime.value = '1';
     }
     if (+event.target.value >= 1.4 && +event.target.value < 2.2) {
       range.value = projectsDurationTime[1].range + randomValue;
+      selectedProjectDurationTime.value = '2';
     }
     if (+event.target.value >= 2.2 && +event.target.value < 3.2) {
       range.value = projectsDurationTime[2].range + randomValue;
+      selectedProjectDurationTime.value = '3';
     }
     if (+event.target.value >= 3.2 && +event.target.value < 4.3) {
       range.value = projectsDurationTime[3].range + randomValue;
+      selectedProjectDurationTime.value = '4';
     }
     if (+event.target.value >= 4.3) {
       range.value = projectsDurationTime[4].range + randomValue;
+      selectedProjectDurationTime.value = '5';
     }
+    console.log('range test');
+
+    handleSetProfit(
+      (
+        document.getElementById('customerValue') as HTMLInputElement
+      ).value.replace(/\$/g, '')
+    );
+  });
+
+  const handleInputChange = $((e: any) => {
+    (document.getElementById('customerValue') as HTMLInputElement).value =
+      e.target.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1') +
+      '$';
+
+    handleSetProfit(e.target.value.replace(/\$/g, ''));
   });
 
   return (
@@ -57,8 +121,14 @@ export const RevenueModel = component$(() => {
             </Typography>
             <div class="flex flex-row items-center gap-[14px]">
               <Input
+                type="text"
+                id="customerValue"
                 variant="outlined"
                 extraClass="max-w-full md:max-w-[160px] h-[47px] text-center text-base"
+                error={customerRateError.value}
+                helperText="Not less than our rate"
+                onChange$={handleInputChange}
+                onInput$={handleInputChange}
               />
               <Typography
                 variant="description"
@@ -74,8 +144,10 @@ export const RevenueModel = component$(() => {
             </Typography>
             <div class="flex flex-row items-center gap-[14px]">
               <Input
+                disabled
                 variant="outlined"
-                extraClass="max-w-full md:max-w-[160px] h-[47px] text-center text-base"
+                value="40$"
+                extraClass="max-w-full md:max-w-[160px] h-[47px] text-center text-base "
               />
               <Typography
                 variant="description"

@@ -1,9 +1,8 @@
 import { component$ } from '@builder.io/qwik';
 
 import { Typography } from '~/components/ui';
-import { RevenueModel } from './RevenueModel';
-import { Profit } from './Profit';
 import { Wrapper } from '~/components/common';
+import { Profit, RevenueModel } from './components';
 
 export const CalculateSection = component$(() => {
   return (

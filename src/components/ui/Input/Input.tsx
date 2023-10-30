@@ -27,11 +27,9 @@ export const Input = component$(
             <input
               type={type}
               class={cn(
-                `peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-primary focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50`,
+                `peer h-full w-full rounded-[7px] border disabled:cursor-not-allowed bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-primary focus:outline-0 disabled:bg-blue-gray-50`,
                 label ? 'focus:border-t-transparent' : '',
-                error
-                  ? 'focus:border-secondary focus:border-t-transparent border-secondary'
-                  : '',
+                error ? 'focus:border-secondary border-secondary' : '',
                 extraClass
               )}
               placeholder=" "
@@ -59,7 +57,7 @@ export const Input = component$(
               </div>
             ) : null}
             {error && helperText ? (
-              <div class="absolute bottom-[-24px] left-0 text-secondary text-xs leading-3 ">
+              <div class="absolute bottom-[-24px] left-0 text-secondary text-xs leading-3 whitespace-nowrap">
                 {helperText}
               </div>
             ) : null}
@@ -95,7 +93,7 @@ export const Input = component$(
               </div>
             ) : null}
             {error && helperText ? (
-              <div class="text-secondary text-xs leading-3 absolute bottom-[-24px] left-0">
+              <div class="text-secondary text-xs leading-3 absolute bottom-[-24px] left-0 whitespace-nowrap">
                 {helperText}
               </div>
             ) : null}
@@ -139,7 +137,7 @@ export const Input = component$(
               </div>
             ) : null}
             {error && helperText ? (
-              <div class="text-secondary text-xs leading-3 absolute bottom-[-24px] left-0">
+              <div class="text-secondary text-xs leading-3 absolute bottom-[-24px] left-0 whitespace-nowrap">
                 {helperText}
               </div>
             ) : null}
@@ -176,7 +174,7 @@ export const Input = component$(
               </div>
             ) : null}
             {error && helperText ? (
-              <div class="text-secondary text-xs leading-3 absolute bottom-[-24px] left-0">
+              <div class="text-secondary text-xs leading-3 absolute bottom-[-24px] left-0 whitespace-nowrap">
                 {helperText}
               </div>
             ) : null}
