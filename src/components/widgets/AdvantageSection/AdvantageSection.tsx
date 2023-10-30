@@ -6,7 +6,7 @@ import { advantageItems } from './helpers';
 
 export const AdvantageSection = component$(() => {
   return (
-    <section>
+    <section class="relative bg-dark">
       <Wrapper class="pb-[180px] pt-[80px] md:pt-[90px] md:pb-[205px]">
         <h5 class="text-center uppercase mb-20 md:mb-[124px]">
           We are cool and serious, look

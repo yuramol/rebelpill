@@ -21,6 +21,7 @@ export const StopSufferingSection = component$(() => {
     const secondTitle = document.querySelector('.second-title-gsap');
     const pill = document.querySelector('.pill-gsap');
     const smallPill = document.querySelector('.small-pill-gsap');
+    const canEarnPill = document.querySelector('.can-earn-pill-gsap');
 
     const coords = smallPill?.getBoundingClientRect();
 
@@ -51,8 +52,8 @@ export const StopSufferingSection = component$(() => {
       })
       .to(pill, {
         duration: 1,
-        top: (coords?.top || 0) - 110 + window.scrollY,
-        left: (coords?.left || 0) + 50 + window.scrollX,
+        top: (coords?.top || 0) - 110 + window.scrollY - window.innerHeight,
+        left: (coords?.x || 0) + 50,
         scale: 0.2,
         ease: 'none',
       })
@@ -64,10 +65,16 @@ export const StopSufferingSection = component$(() => {
         ease: 'none',
       });
 
-    ScrollTrigger.create({
-      trigger: '.containerR',
-      start: 'top top',
-      end: '+=66%',
+    const canEarnPillAnimation = gsap.to(canEarnPill, {
+      scrollTrigger: {
+        trigger: canEarnPill,
+        scrub: true,
+        end: () => `+=${(container as HTMLElement)?.offsetWidth}`,
+      },
+      duration: 0.3,
+      opacity: 1,
+      scale: 1,
+      ease: 'none',
     });
 
     sections.forEach((panel) => {
@@ -78,32 +85,39 @@ export const StopSufferingSection = component$(() => {
         pinSpacing: false,
       });
     });
+
+    return () => {
+      tl.kill();
+      canEarnPillAnimation.kill();
+    };
   });
 
   return (
     <section class="relative bg-dark w-full">
       {/* section 1 */}
       <div class="containerR w-full h-screen bg-dark relative">
-        <Wrapper class="relative w-full flex flex-col justify-center items-center h-full">
-          <div class="absolute top-0 left-4">
-            <Typography
-              variant="description"
-              class="second-title-gsap pt-[150px] pr-[15px] Pill2:pr-[60px] Pill3:pr-[80px] relative uppercase !text-h1 z-20 opacity-0"
-            >
-              it's time to take you to the next level.
-              <span class="small-pill-gsap !inline-block absolute w-[100px] mt-[72px] Pill1:mt-16 Pill2:mt-14 Pill3:mt-12 Pill4:mt-10 Pill5:mt-8 Pill6:mt-7 Pill7:mt-5 ml-0 smContactForm:mt-2 smContactForm:ml-3"></span>
-            </Typography>
-          </div>
+        <div class="relative max-w-full w-full flex flex-col justify-center items-center h-full">
+          <Wrapper class="relative w-full h-full">
+            <div class="absolute top-0 left-4">
+              <Typography
+                variant="description"
+                class="second-title-gsap pt-[150px] pr-[15px] Pill2:pr-[60px] Pill3:pr-[80px] relative uppercase !text-h1 z-20 opacity-0"
+              >
+                it's time to take you to the next level.
+                <span class="small-pill-gsap !inline-block absolute w-[100px] mt-[72px] Pill1:mt-16 Pill2:mt-14 Pill3:mt-12 Pill4:mt-10 Pill5:mt-8 Pill6:mt-7 Pill7:mt-5 ml-0 smContactForm:mt-2 smContactForm:ml-3"></span>
+              </Typography>
+            </div>
+          </Wrapper>
           <div class="pill-gsap absolute w-full flex justify-center left-[50%] right-[50%] translate-x-[-50%] translate-y-0 px-10 z-10 scale-100">
             <Pill />
           </div>
           <Typography
             variant="description"
-            class="title-gsap uppercase z-10 text-center !text-logo opacity-100 scale-100"
+            class="title-gsap absolute w-full left-[50%] right-[50%] translate-x-[-50%] translate-y-0 uppercase z-10 text-center !text-logo opacity-100 scale-100"
           >
             Stop suffering dude
           </Typography>
-        </Wrapper>
+        </div>
         <img
           src={Laptop}
           width={100}
@@ -158,9 +172,9 @@ export const StopSufferingSection = component$(() => {
         />
       </div>
       {/* section 4 */}
-      <div class="panel-gsap w-full h-screen bg-dark">
+      <div class="panel-gsap w-full h-screen bg-dark ">
         <Wrapper class="w-full flex flex-col justify-center items-center h-full px-0 gap-2 md:gap-5">
-          <div class="absolute w-full flex justify-center left-[50%] right-[50%] translate-x-[-50%]">
+          <div class="absolute w-full can-earn-pill-gsap scale-75 opacity-60 flex justify-center left-[50%] right-[50%] translate-x-[-50%]">
             <PillHuge />
           </div>
           <Typography
