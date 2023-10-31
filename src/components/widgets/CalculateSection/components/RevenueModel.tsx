@@ -19,7 +19,7 @@ export const RevenueModel = component$(() => {
 
   const handleSetProfit = $((value: string) => {
     value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');
-    if (+value < 40) {
+    if (+value < OURRATE) {
       customerRateError.value = true;
     } else {
       customerRateError.value = false;
@@ -49,11 +49,11 @@ export const RevenueModel = component$(() => {
         ? 1000
         : 10000;
 
-    const minValue = (+value - 40) * minProjectDuration;
-    const maxValue = (+value - 40) * maxProjectDuration;
+    const minValue = (+value - OURRATE) * minProjectDuration;
+    const maxValue = (+value - OURRATE) * maxProjectDuration;
     const profit = `$ ${minValue} - $ ${maxValue}`;
     (document.getElementById('profitValue') as HTMLInputElement).value =
-      +value > 40 ? profit : '';
+      +value > OURRATE ? profit : '';
   });
 
   const handleRadioChange = $((event: any) => {
