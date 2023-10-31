@@ -30,7 +30,7 @@ export const StopSufferingSection = component$(() => {
         trigger: '.containerR',
         pin: true,
         scrub: true,
-        end: () => `+=${(container as HTMLElement)?.offsetWidth}`,
+        end: () => `+=${(container as HTMLElement).offsetWidth}`,
       },
     });
 
@@ -69,7 +69,7 @@ export const StopSufferingSection = component$(() => {
       scrollTrigger: {
         trigger: canEarnPill,
         scrub: true,
-        end: () => `+=${(container as HTMLElement)?.offsetWidth}`,
+        end: () => `+=${(container as HTMLElement).offsetWidth}`,
       },
       duration: 0.3,
       opacity: 1,
@@ -101,10 +101,10 @@ export const StopSufferingSection = component$(() => {
             <div class="absolute top-0 left-4">
               <Typography
                 variant="description"
-                class="second-title-gsap pt-[150px] pr-[15px] Pill2:pr-[60px] Pill3:pr-[80px] relative uppercase !text-h1 z-20 opacity-0"
+                class="second-title-gsap pt-[150px] pr-[15px] min-[400px]:pr-[60px] min-[430px]:pr-[80px] relative uppercase !text-h1 z-20 opacity-0"
               >
                 it's time to take you to the next level.
-                <span class="small-pill-gsap !inline-block absolute w-[100px] mt-[72px] Pill1:mt-16 Pill2:mt-14 Pill3:mt-12 Pill4:mt-10 Pill5:mt-8 Pill6:mt-7 Pill7:mt-5 ml-0 smContactForm:mt-2 smContactForm:ml-3"></span>
+                <span class="small-pill-gsap !inline-block absolute w-[100px] mt-[72px] min-[370px]:mt-16 min-[400px]:mt-14 min-[430px]:mt-12 min-[470px]:mt-10 min-[520px]:mt-8 min-[536px]:mt-7 min-[570px]:mt-5 ml-0 smContactForm:mt-2 smContactForm:ml-3"></span>
               </Typography>
             </div>
           </Wrapper>

@@ -11,13 +11,6 @@ module.exports = {
       xsContactForm: '390px',
       smContactForm: '625px',
       mdContactForm: '1100px',
-      Pill1: '370px',
-      Pill2: '400px',
-      Pill3: '430px',
-      Pill4: '470px',
-      Pill5: '520px',
-      Pill6: '536px',
-      Pill7: '570px',
     },
     lineHeight: {
       1: '14px',
