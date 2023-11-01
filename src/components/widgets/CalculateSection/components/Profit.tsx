@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 
-import { Button, Input, Typography, WrapperGradient } from '~/components/ui';
+import { Button, Typography, WrapperGradient } from '~/components/ui';
 
 export const Profit = component$(() => (
   <div class="flex flex-col w-full max-w-full md:max-w-[557px] h-auto xl:h-[534px] mt-[-1px] md:ml-[-1px]">
@@ -20,16 +20,13 @@ export const Profit = component$(() => (
         </Typography>
       </div>
 
-      <div class="flex flex-col md:flex-row w-full justify-between items-start md:items-center gap-[18px] mb-5 md:mb-[100px] lg:mb-[154px]">
+      <div class="flex flex-col flex-wrap md:flex-row w-full justify-between items-start md:items-center gap-[18px] mb-5 md:mb-[100px] lg:mb-[154px]">
         <Typography variant="button" class="uppercase whitespace-nowrap">
           Your profit
         </Typography>
-        <Input
+        <div
           id="profitValue"
-          disabled
-          variant="outlined"
-          extraClass="max-w-full md:max-w-[190px] h-[47px] w-full text-center text-base"
-          wrapperClass="md:w-auto"
+          class="min-w-[180px] h-[47px] overflow-x-scroll text-base border-[1px] rounded-[7px] flex items-center justify-center px-4 cursor-not-allowed whitespace-nowrap"
         />
       </div>
 
