@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
-import { Preloader } from '~/components/widgets';
+import { Preloader, StopSufferingSection } from '~/components/widgets';
 
 import { SITE } from '~/config.mjs';
 
@@ -23,6 +23,7 @@ export default component$(() => {
     <div class="flex flex-col">
       <Preloader />
       <HeroSection />
+      <StopSufferingSection />
       <CleanSchemeSection />
       <AdvantageSection />
       <Divider />

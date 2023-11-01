@@ -10,7 +10,7 @@ export const ContactSection = component$(() => {
   const toggleTab = $((e: any) => (tabs.value = e.target.tabIndex));
 
   return (
-    <section class="overflow-hidden relative before:content-[''] before:h-[130px] before:w-[130px] before:md:h-[260px] before:md:w-[260px] before:bg-primary before:absolute before:rounded-[50%] before:blur-[125px] before:md:blur-[250px] before:top-[30%] before:md:top-0 before:left-[-25px] before:md:left-[-50px] before:md:bottom-0 before:md:m-auto">
+    <section class="relative before:content-[''] before:h-[130px] before:w-[130px] before:md:h-[260px] before:md:w-[260px] before:bg-primary before:absolute before:rounded-[50%] before:blur-[125px] before:md:blur-[250px] before:top-[30%] before:md:top-0 before:left-[-25px] before:md:left-[-50px] before:md:bottom-0 before:md:m-auto">
       <Wrapper class="flex flex-col  items-start smContactForm:items-center py-20 smContactForm:py-[120px]">
         <div class=" w-full flex flex-col mdContactForm:flex-row items-start smContactForm:items-center justify-between gap-5 mb-10 smContactForm:mb-[90px]">
           <div class="w-full flex flex-row justify-start smContactForm:justify-center mdContactForm:justify-start  items-center gap-10">

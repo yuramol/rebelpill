@@ -6,3 +6,4 @@ export { CleanSchemeSection } from './CleanSchemeSection';
 export { BenefitsSection } from './BenefitsSection';
 export { HeroSection } from './HeroSection';
 export { ContactSection } from './ContactSection';
+export { StopSufferingSection } from './StopSufferingSection';

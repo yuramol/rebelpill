@@ -6,24 +6,11 @@ import { component$, useStyles$, useVisibleTask$ } from '@builder.io/qwik';
 import styles from './style.css?inline';
 
 import { Icon, Typography } from '~/components/ui';
-import Video from '~/assets/videos/pexels-deeana-arts-14526902.mp4';
+import { tikTokVideos } from './helpers';
 
 const TIKTOKLINK = 'https://www.tiktok.com/@it.dropshipper?_t=8gRRRNlxGoo&_r=1';
 
 export const FollowUsSection = component$(() => {
-  const videos = [
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-    Video,
-  ];
-
   useVisibleTask$(() => {
     new Swiper('.swiper-follow', {
       slidesPerView: 'auto',
@@ -49,20 +36,81 @@ export const FollowUsSection = component$(() => {
       <div class="flex w-full items-center justify-center">
         <div class="swiper-follow w-full h-full max-w-[1440px] rotate-[353deg]">
           <div class="swiper-wrapper flex items-center">
-            {videos.map((video, index) => (
-              <div key={index} class="swiper-slide adaptive-size mx-6">
-                <div
-                  class="w-full h-full overflow-hidden bg-dark"
-                  style={{
-                    transform: 'rotate(5deg)',
-                  }}
-                >
-                  <video key={index} class="h-full w-full" muted loop controls>
-                    <source src={video} type="video/mp4" />
-                  </video>
+            {tikTokVideos.map(
+              ({ cite, dataVideoId, href, id, description }) => (
+                <div key={id} class="swiper-slide adaptive-size mx-6">
+                  <div
+                    class="w-full h-full overflow-hidden bg-dark"
+                    style={{
+                      transform: 'rotate(5deg)',
+                    }}
+                  >
+                    <blockquote
+                      class="tiktok-embed w-full h-full"
+                      cite={cite}
+                      data-video-id={dataVideoId}
+                    >
+                      <section>
+                        <a
+                          target="_blank"
+                          title="@it.dropshipper"
+                          href="https://www.tiktok.com/@it.dropshipper?refer=embed"
+                        >
+                          @it.dropshipper
+                        </a>
+                        {description}
+                        <a
+                          title="itdropshipping"
+                          target="_blank"
+                          href="https://www.tiktok.com/tag/itdropshipping?refer=embed"
+                        >
+                          #itdropshipping
+                        </a>
+                        <a
+                          title="rebelpill"
+                          target="_blank"
+                          href="https://www.tiktok.com/tag/rebelpill?refer=embed"
+                        >
+                          #rebelpill
+                        </a>
+                        <a
+                          title="sidehustle"
+                          target="_blank"
+                          href="https://www.tiktok.com/tag/sidehustle?refer=embed"
+                        >
+                          #sidehustle
+                        </a>
+                        <a
+                          title="tiktech"
+                          target="_blank"
+                          href="https://www.tiktok.com/tag/tiktech?refer=embed"
+                        >
+                          #tiktech
+                        </a>
+                        <a
+                          title="itprofessional"
+                          target="_blank"
+                          href="https://www.tiktok.com/tag/itprofessional?refer=embed"
+                        >
+                          #itprofessional
+                        </a>
+                        <a
+                          target="_blank"
+                          title="♬ original sound - It Dropshipper"
+                          href={href}
+                        >
+                          ♬ original sound - It Dropshipper
+                        </a>
+                      </section>
+                    </blockquote>
+                    <script
+                      async
+                      src="https://www.tiktok.com/embed.js"
+                    ></script>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </div>
