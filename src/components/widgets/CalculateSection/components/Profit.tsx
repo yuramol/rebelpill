@@ -26,7 +26,7 @@ export const Profit = component$(() => (
         </Typography>
         <div
           id="profitValue"
-          class="min-w-[180px] h-[47px] overflow-x-scroll text-base border-[1px] rounded-[7px] flex items-center justify-center px-4 cursor-not-allowed whitespace-nowrap"
+          class="min-w-[180px] h-[47px] overflow-hidden text-base border-[1px] rounded-[7px] flex items-center justify-center px-4 cursor-not-allowed whitespace-nowrap"
         />
       </div>
 

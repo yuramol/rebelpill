@@ -109,7 +109,7 @@ export const StopSufferingSection = component$(() => {
             </div>
           </Wrapper>
           <div class="pill-gsap absolute w-full flex justify-center left-[50%] right-[50%] translate-x-[-50%] translate-y-0 px-10 z-10 scale-100">
-            <Pill />
+            <Pill alt="Pill" />
           </div>
           <Typography
             variant="description"
@@ -175,7 +175,7 @@ export const StopSufferingSection = component$(() => {
       <div class="panel-gsap w-full h-screen bg-dark ">
         <Wrapper class="w-full flex flex-col justify-center items-center h-full px-0 gap-2 md:gap-5">
           <div class="absolute w-full can-earn-pill-gsap scale-75 opacity-60 flex justify-center left-[50%] right-[50%] translate-x-[-50%]">
-            <PillHuge />
+            <PillHuge alt="PillHuge" />
           </div>
           <Typography
             variant="body1"

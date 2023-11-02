@@ -2,8 +2,6 @@ import type { IconCommonProps } from '../types';
 
 export const ArrowNorthEast = (style: IconCommonProps) => (
   <svg
-    width="auto"
-    height="auto"
     viewBox="0 0 46 45"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

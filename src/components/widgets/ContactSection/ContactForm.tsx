@@ -22,17 +22,19 @@ export const ContactForm = component$<ContactFormProps>(({ tab }) => {
   return (
     <div class="max-w-[596px] w-full flex flex-col items-center">
       <div class="w-full flex flex-col gap-[60px] smContactForm:gap-[50px] mb-10">
-        <Input label="NAME" required />
-        <Input label="E-MAIL" />
+        <Input id="name" label="NAME" required />
+        <Input id="email" label="E-MAIL" />
         {tab === 1 ? (
           <>
             <Input
+              id="profession"
               label="YOUR PROFESSION?"
               variant="select"
               selectOptions={itProfessions}
               icon="play"
             />
             <Input
+              id="description"
               label="Do you have any ideas, or questions"
               variant="textarea"
             />

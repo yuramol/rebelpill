@@ -52,7 +52,7 @@ export const Preloader = component$(() => {
               <FinalLogo />
             </div>
             <div class="preloader_final-pill">
-              <Pill />
+              <Pill alt="Pill" />
             </div>
           </div>
         </div>

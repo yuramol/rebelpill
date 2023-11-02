@@ -141,6 +141,9 @@ export const RevenueModel = component$(() => {
                 onChange$={handleInputChange}
                 onInput$={handleInputChange}
               />
+              <label for="customerValue" class="none">
+                text
+              </label>
               <Typography
                 variant="description"
                 class="text-caption font-light uppercase whitespace-nowrap"
@@ -155,11 +158,15 @@ export const RevenueModel = component$(() => {
             </Typography>
             <div class="flex flex-row items-center gap-[14px]">
               <Input
+                id="ourRate"
                 disabled
                 variant="outlined"
                 value={`$ ${OURRATE}`}
                 extraClass="max-w-full md:max-w-[160px] h-[47px] text-center text-base "
               />
+              <label for="ourRate" class="none">
+                text
+              </label>
               <Typography
                 variant="description"
                 class="text-caption font-light uppercase whitespace-nowrap"
