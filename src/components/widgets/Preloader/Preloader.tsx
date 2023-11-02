@@ -5,7 +5,7 @@ import {
   useVisibleTask$,
 } from '@builder.io/qwik';
 
-import Pill from '~/assets/images/Pill.png?jsx';
+import Pill from '~/assets/images/Pill.webp?jsx';
 
 import { BottomTop, FinalLogo, StartTop } from './svg';
 

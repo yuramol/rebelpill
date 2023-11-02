@@ -4,8 +4,8 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { Wrapper } from '~/components/common';
 import { Typography } from '~/components/ui';
 
-import Pill from '~/assets/images/Pill.png?jsx';
-import PillHuge from '~/assets/images/PillHuge.png?jsx';
+import Pill from '~/assets/images/Pill.webp?jsx';
+import PillHuge from '~/assets/images/PillHuge.webp?jsx';
 import Laptop from '../../../assets/images/Laptop.png';
 import VRGlasses from '../../../assets/images/VRGlasses.png';
 import VRGlassesMobile from '../../../assets/images/VRGlassesMobile.png';
