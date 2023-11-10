@@ -1,6 +1,6 @@
 import { $, component$, useOnDocument, useSignal } from '@builder.io/qwik';
 
-import { headerNav } from './helpers';
+import { headerNav, scrollToElement } from './helpers';
 import { Icon } from '../ui/Icon';
 import HeaderMobile from './HeaderMobile';
 
@@ -21,11 +21,6 @@ export default component$(() => {
       behavior: 'smooth',
     })
   );
-
-  const scrollToElement = $((elementId: string) => {
-    const element = document.getElementById(elementId);
-    element?.scrollIntoView();
-  });
 
   return (
     <header

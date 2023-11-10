@@ -1,7 +1,6 @@
 import { component$, useSignal, $ } from '@builder.io/qwik';
-import { Link } from '@builder.io/qwik-city';
 
-import { headerNav } from './helpers';
+import { headerNav, scrollToElement } from './helpers';
 
 const spanStyle =
   'block absolute h-1 w-full m-auto bg-dark opacity-100 left-0 rotate-0 transition-all duration-[250ms] ease-in-out ';
@@ -50,15 +49,18 @@ export default component$(() => {
         }`}
       >
         <ul class="flex flex-col gap-[6px] text-center text-white text-base">
-          {headerNav.map(({ id, title, href }) => (
+          {headerNav.map(({ id, title }) => (
             <li
               key={id}
               class={[
                 'p-[10px] bg-dark rounded-full group w-full  flex whitespace-nowrap justify-center items-center gap-5 shrink-0  shadow-[0px_0px_3px_0px_rgba(255,_255,_255,_0.3)] overflow-hidden relative z-[1] transition-padding duration-[0.4s]',
                 'before:content-[""] before:h-full before:w-0 before:hover:w-full before:rounded-full before:absolute before:top-0 before:left-0 before:transition-all before:duration-[0.4s] before:z-[-1] before:bg-hover-gradient',
               ]}
+              onClick$={() => {
+                scrollToElement(id);
+              }}
             >
-              <Link href={href}>{title}</Link>
+              {title}
             </li>
           ))}
         </ul>
