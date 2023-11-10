@@ -1,5 +1,4 @@
 import { $, component$, useOnDocument, useSignal } from '@builder.io/qwik';
-import { Link } from '@builder.io/qwik-city';
 
 import { headerNav } from './helpers';
 import { Icon } from '../ui/Icon';
@@ -23,6 +22,11 @@ export default component$(() => {
     })
   );
 
+  const scrollToElement = $((elementId: string) => {
+    const element = document.getElementById(elementId);
+    element?.scrollIntoView();
+  });
+
   return (
     <header
       id="header"
@@ -42,19 +46,20 @@ export default component$(() => {
             ]}
             onClick$={scrollToTop}
           >
-            <Link href="/">
-              <Icon icon="home" />
-            </Link>
+            <Icon icon="home" />
           </li>
-          {headerNav.map(({ id, title, href }) => (
+          {headerNav.map(({ id, title }) => (
             <li
               key={id}
               class={[
-                'py-[7px] px-5 bg-grey rounded-full group flex whitespace-nowrap justify-center items-center gap-5 shrink-0 overflow-hidden relative z-[1] transition-padding duration-[0.4s]',
+                'cursor-pointer py-[7px] px-5 bg-grey rounded-full group flex whitespace-nowrap justify-center items-center gap-5 shrink-0 overflow-hidden relative z-[1] transition-padding duration-[0.4s]',
                 'before:content-[""] before:h-full before:w-0 before:hover:w-full before:rounded-full before:absolute before:top-0 before:left-0 before:transition-all before:duration-[0.4s] before:z-[-1] before:bg-hover-gradient',
               ]}
+              onClick$={() => {
+                scrollToElement(id);
+              }}
             >
-              <Link href={href}>{title}</Link>
+              {title}
             </li>
           ))}
           <li

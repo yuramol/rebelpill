@@ -6,7 +6,7 @@ import { Profit, RevenueModel } from './components';
 
 export const CalculateSection = component$(() => {
   return (
-    <section class="py-[180px]">
+    <section id="calculateSection" class="py-[180px]">
       <Wrapper class="flex flex-col items-center justify-center w-full bg-dark">
         <Typography variant="button" class="mb-20">
           Calculate your profit
