@@ -26,31 +26,31 @@ export const HeroSection = component$(() => {
 
     const animatioChipOne = gsap.to('.chip-gsap-1', {
       duration: 3,
-      delay: 4,
+      delay: 3.8,
       transform: 'rotate(-6deg) translateY(0)',
       ease: 'bounce.out',
     });
     const animatioChipTwo = gsap.to('.chip-gsap-2', {
       duration: 3.2,
-      delay: 4,
+      delay: 3.8,
       transform: 'rotate(6deg) translateY(0)',
       ease: 'bounce.out',
     });
     const animatioChipThree = gsap.to('.chip-gsap-3', {
       duration: 3.4,
-      delay: 4,
+      delay: 3.8,
       transform: 'rotate(6deg) translateY(0)',
       ease: 'bounce.out',
     });
     const animatioChipFour = gsap.to('.chip-gsap-4', {
       duration: 3.6,
-      delay: 4,
+      delay: 3.8,
       transform: 'rotate(-6deg) translateY(0)',
       ease: 'bounce.out',
     });
     const animatioChipFive = gsap.to('.chip-gsap-5', {
       duration: 3.8,
-      delay: 4,
+      delay: 3.8,
       transform: 'rotate(-6deg) translateY(0)',
       ease: 'bounce.out',
     });
@@ -58,7 +58,6 @@ export const HeroSection = component$(() => {
     return () => {
       animationLogo.kill();
       animationTitle.kill();
-      // animationChip.kill();
       animatioChipOne.kill();
       animatioChipTwo.kill();
       animatioChipThree.kill();
