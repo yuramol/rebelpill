@@ -1,22 +1,17 @@
 export const chips = [
   {
-    text: 'your salary hits the ceiling',
-    class: 'absolute left-11 bottom-60 -rotate-6',
+    title: 'your salary hits the ceiling',
   },
   {
-    text: 'endless meetings',
-    class: 'absolute left-45 bottom-60 -rotate-6',
+    title: 'endless meetings',
   },
   {
-    text: 'annoying PMs and customers',
-    class: 'absolute right-20 bottom-64',
+    title: 'annoying PMs and customers',
   },
   {
-    text: 'Unsolved bugs',
-    class: 'absolute right-20 bottom-24 -rotate-6',
+    title: 'Unsolved bugs',
   },
   {
-    text: 'boring projects',
-    class: 'absolute right-[30%] bottom-20 rotate-6',
+    title: 'boring projects',
   },
 ];

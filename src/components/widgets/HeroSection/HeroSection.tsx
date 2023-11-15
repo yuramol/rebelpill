@@ -24,16 +24,53 @@ export const HeroSection = component$(() => {
       ease: 'linear',
     });
 
+    const animatioChipOne = gsap.to('.chip-gsap-1', {
+      duration: 3,
+      delay: 4,
+      transform: 'rotate(-6deg) translateY(0)',
+      ease: 'bounce.out',
+    });
+    const animatioChipTwo = gsap.to('.chip-gsap-2', {
+      duration: 3.2,
+      delay: 4,
+      transform: 'rotate(6deg) translateY(0)',
+      ease: 'bounce.out',
+    });
+    const animatioChipThree = gsap.to('.chip-gsap-3', {
+      duration: 3.4,
+      delay: 4,
+      transform: 'rotate(6deg) translateY(0)',
+      ease: 'bounce.out',
+    });
+    const animatioChipFour = gsap.to('.chip-gsap-4', {
+      duration: 3.6,
+      delay: 4,
+      transform: 'rotate(-6deg) translateY(0)',
+      ease: 'bounce.out',
+    });
+    const animatioChipFive = gsap.to('.chip-gsap-5', {
+      duration: 3.8,
+      delay: 4,
+      transform: 'rotate(-6deg) translateY(0)',
+      ease: 'bounce.out',
+    });
+
     return () => {
       animationLogo.kill();
       animationTitle.kill();
+      // animationChip.kill();
+      animatioChipOne.kill();
+      animatioChipTwo.kill();
+      animatioChipThree.kill();
+      animatioChipFour.kill();
+      animatioChipFive.kill();
     };
   });
 
   return (
     <section class="h-screen w-full bg-primary-gradient bg-top flex overflow-hidden">
-      <Wrapper class="flex flex-col items-center pt-[60px] md:pt-24 gap-12 relative">
-        <div class="flex flex-col items-center gap-12">
+      <Wrapper class="flex flex-col items-center pt-[60px] md:pt-24 gap-4 md:gap-12 relative">
+        <div class="flex flex-col items-center gap-6 min-[480px]:gap-12">
           <Typography
             variant="h5"
             class="hero-logo scale-[300%] opacity-0 text-black !font-semibold uppercase"
@@ -51,10 +88,19 @@ export const HeroSection = component$(() => {
         </div>
 
         {/* chips */}
-        {chips.length &&
-          chips.map((chip, index) => (
-            <Chip key={index} text={chip.text} class={chip.class} />
-          ))}
+        {chips.length ? (
+          <div class="flex flex-wrap justify-center">
+            {chips.map(({ title }, index) => (
+              <Chip
+                key={index}
+                text={title}
+                class={`chip-gsap-${
+                  index + 1
+                } relative w-auto translate-y-[-1200px] rotate-[160deg] whitespace-nowrap m-4 min-[480px]:m-5 min-[739px]:m-6 min-[830px]:m-8 min-[1130px]-m-10`}
+              />
+            ))}
+          </div>
+        ) : null}
       </Wrapper>
     </section>
   );
