@@ -16,7 +16,10 @@ export const Chip = component$<ChipProps>(({ text, class: className }) => {
         className,
       ]}
     >
-      <Typography variant="description" class="!text-h5 !font-medium">
+      <Typography
+        variant="description"
+        class="text-sm min-[580px]:!text-h5 !font-medium"
+      >
         {text}
       </Typography>
     </div>
